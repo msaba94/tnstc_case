@@ -3,6 +3,7 @@ package application.view_all;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -14,7 +15,6 @@ import application.model.CaseDetail;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.AnchorPane;
@@ -28,10 +28,10 @@ public class ViewAllController implements Initializable {
 	private JFXTreeTableView<CaseDetail> caseDetailTV;
 
 	@FXML
-	private Button refreshBtn;
+	private JFXButton refreshBtn;
 
 	@FXML
-	private Button deleteBtn;
+	private JFXButton deleteBtn;
 
 	private SQLHelper helper;
 	private ObservableList<CaseDetail> caseDetails;
@@ -72,6 +72,12 @@ public class ViewAllController implements Initializable {
 
 	@SuppressWarnings("unchecked")
 	private void initTableData() {
+		
+		JFXTreeTableColumn<CaseDetail, String> fipNoCol = new JFXTreeTableColumn<>("FIP No");
+		fipNoCol.setPrefWidth(100);
+		fipNoCol.setCellValueFactory(
+				(TreeTableColumn.CellDataFeatures<CaseDetail, String> param) -> param.getValue().getValue().fip);
+		
 		JFXTreeTableColumn<CaseDetail, String> dateOfAccCol = new JFXTreeTableColumn<>("Date Of Acc");
 		dateOfAccCol.setPrefWidth(100);
 		dateOfAccCol.setCellValueFactory(
@@ -139,7 +145,7 @@ public class ViewAllController implements Initializable {
 
 		caseDetailTI = new RecursiveTreeItem<>(caseDetails, RecursiveTreeObject::getChildren);
 		caseDetailTV.setRoot(caseDetailTI);
-		caseDetailTV.getColumns().setAll(dateOfAccCol, timeCol, placeCol, drNameCol, crNameCol, vehNoCol, ghCol,
+		caseDetailTV.getColumns().setAll(fipNoCol, dateOfAccCol, timeCol, placeCol, drNameCol, crNameCol, vehNoCol, ghCol,
 				policeStationCol, petNameCol, mactCol, mcopCol, firCol, epNoCol);
 		caseDetailTV.setShowRoot(false);
 

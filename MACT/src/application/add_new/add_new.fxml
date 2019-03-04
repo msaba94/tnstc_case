@@ -1,233 +1,236 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.add_new.AddNewController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #e1e1e1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.add_new.AddNewController">
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      <Insets left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
-      <HBox alignment="CENTER" layoutX="236.0" layoutY="161.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="236.0" layoutY="161.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
          <children>
-            <TextField fx:id="fipNoTxt" promptText="FIP NO:">
+            <JFXTextField fx:id="fipNoTxt" focusColor="#00796b" labelFloat="true" prefWidth="250.0" promptText="FIP No:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="dateOfAccTxt" layoutX="353.0" layoutY="10.0" promptText="DATE OF ACC:">
+            </JFXTextField>
+            <JFXTextField fx:id="dateOfAccTxt" focusColor="#00796b" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="Date of Acc:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="timeTxt" layoutX="265.0" layoutY="10.0" promptText="TIME:">
+            </JFXTextField>
+            <JFXTextField fx:id="timeTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Time:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="placeTxt" layoutX="178.0" layoutY="10.0" promptText="PLACE:">
+            </JFXTextField>
+            <JFXTextField fx:id="placeTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Place:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
+            </JFXTextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="26.0" layoutY="50.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <HBox alignment="CENTER" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
-            <TextField fx:id="drNameTxt" promptText="DR NAME:">
+            <JFXTextField fx:id="drNameTxt" focusColor="#00796b" labelFloat="true" prefWidth="250.0" promptText="Driver Name:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="crNameTxt" layoutX="353.0" layoutY="10.0" promptText="CR NAME:">
+            </JFXTextField>
+            <JFXTextField fx:id="crNameTxt" focusColor="#00796b" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="Conductor Name:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="vehNoTxt" layoutX="265.0" layoutY="10.0" promptText="VEH NO:">
+            </JFXTextField>
+            <JFXTextField fx:id="vehNoTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Veh No:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="routeTxt" layoutX="178.0" layoutY="10.0" promptText="ROUTE:">
+            </JFXTextField>
+            <JFXTextField fx:id="routeTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Route:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
+            </JFXTextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="28.0" layoutY="125.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="110.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="160.0">
          <children>
-            <TextField fx:id="branchTxt" promptText="BRANCH:">
+            <JFXTextField fx:id="branchTxt" focusColor="#00796b" labelFloat="true" prefWidth="250.0" promptText="Branch:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="typeOfRoadTxt" layoutX="353.0" layoutY="10.0" promptText="TYPE OF ROAD:">
+            </JFXTextField>
+            <JFXTextField fx:id="typeOfRoadTxt" focusColor="#00796b" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="Type of Road:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="ghTxt" layoutX="265.0" layoutY="10.0" promptText="GH:">
+            </JFXTextField>
+            <JFXTextField fx:id="ghTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Govt Hospital:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="policeStationTxt" layoutX="178.0" layoutY="10.0" promptText="POLICE STATION:">
+            </JFXTextField>
+            <JFXTextField fx:id="policeStationTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Police Station:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
+            </JFXTextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="30.0" layoutY="200.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="230.0">
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="170.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="220.0">
          <children>
-            <TextField fx:id="petNameTxt" promptText="PET NAME:">
+            <JFXTextField fx:id="petNameTxt" focusColor="#00796b" labelFloat="true" prefWidth="250.0" promptText="Petitioner Name:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="mactTxt" layoutX="353.0" layoutY="10.0" promptText="MACT/COURT:">
+            </JFXTextField>
+            <JFXTextField fx:id="mactTxt" focusColor="#00796b" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="MACT / Court:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="mcopTxt" layoutX="265.0" layoutY="10.0" promptText="MCOP/CASE:">
+            </JFXTextField>
+            <JFXTextField fx:id="mcopTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="MCOP/Case:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="firstHearTxt" layoutX="178.0" layoutY="10.0" promptText="FIRST HEAR:">
+            </JFXTextField>
+            <JFXTextField fx:id="firstHearTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="First Hear:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
+            </JFXTextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="30.0" layoutY="280.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="310.0">
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="230.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="280.0">
          <children>
-            <TextField fx:id="epTxt" promptText="EP NO:">
+            <JFXTextField fx:id="epTxt" focusColor="#00796b" labelFloat="true" prefWidth="250.0" promptText="EP No:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="firTxt" layoutX="353.0" layoutY="10.0" promptText="FIR:">
+            </JFXTextField>
+            <JFXTextField fx:id="firTxt" focusColor="#00796b" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="FIR:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="dateOfWarrentTxt" layoutX="265.0" layoutY="10.0" promptText="DATE OF WARRENT:">
+            </JFXTextField>
+            <JFXTextField fx:id="dateOfWarrentTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Date of Warrent:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
-            <TextField fx:id="natureOfAccTxt" layoutX="178.0" layoutY="10.0" promptText="NATURE OF ACC:">
+            </JFXTextField>
+            <JFXTextField fx:id="natureOfAccTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Nature of Acc:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </TextField>
+            </JFXTextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="40.0" layoutY="450.0" prefHeight="141.0" prefWidth="860.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="390.0">
+      <HBox alignment="CENTER" layoutX="375.0" layoutY="330.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="340.0">
          <children>
-            <TextArea fx:id="punishmentTxt" prefWidth="350.0" promptText="PUNISHMENT:">
+            <JFXTextArea fx:id="punishmentTxt" focusColor="#00796b" labelFloat="true" prefWidth="450.0" promptText="Punishment:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets right="50.0" />
+                  <Insets left="20.0" right="50.0" />
                </HBox.margin>
-            </TextArea>
-            <TextArea fx:id="darTxt" layoutX="320.0" layoutY="10.0" prefHeight="200.0" prefWidth="350.0" promptText="DAR:">
+            </JFXTextArea>
+            <JFXTextArea fx:id="darTxt" focusColor="#00796b" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="450.0" promptText="DAR:" unFocusColor="#757575">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.5" />
                </font>
                <HBox.margin>
-                  <Insets left="50.0" />
+                  <Insets left="50.0" right="20.0" />
                </HBox.margin>
-            </TextArea>
+            </JFXTextArea>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="350.0" layoutY="584.0" prefHeight="60.0" prefWidth="200.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="585.0">
+      <HBox alignment="CENTER" layoutX="340.0" layoutY="514.0" prefHeight="60.0" prefWidth="350.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="340.0">
          <children>
-            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveCase" prefWidth="125.0" text="SAVE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="resetBtn" mnemonicParsing="false" onAction="#resetAll" prefWidth="125.0" text="RESET ALL">
+            <JFXButton fx:id="saveBtn" onAction="#saveCase" prefWidth="150.0" style="-fx-background-color: #009688#009688;" text="SAVE" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
                <HBox.margin>
-                  <Insets left="25.0" />
+                  <Insets right="20.0" />
                </HBox.margin>
-            </Button>
+            </JFXButton>
+            <JFXButton fx:id="resetBtn" layoutX="90.0" layoutY="23.0" onAction="#resetAll" prefWidth="150.0" style="-fx-background-color: #009688#009688;" text="REST ALL" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </JFXButton>
          </children>
       </HBox>
    </children>

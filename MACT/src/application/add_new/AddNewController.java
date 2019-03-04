@@ -117,7 +117,7 @@ public class AddNewController implements Initializable {
 	private void setDataToTxt(CaseDetail caseDetail) {
 		if (caseDetail != null) {
 
-			saveBtn.setText("Edit");
+			saveBtn.setText("UPDATE");
 
 			dateOfAccTxt.setText(caseDetail.getDateOfAcc());
 			timeTxt.setText(caseDetail.getTime());
@@ -150,7 +150,7 @@ public class AddNewController implements Initializable {
 
 	public void saveCase() {
 
-		if (StringUtils.equals("Save", saveBtn.getText())) {
+		if (StringUtils.equals("SAVE", saveBtn.getText())) {
 			if (Utils.isValied(fipNoTxt.getText())) {
 				CaseDetail caseDetail = new CaseDetail(0, dateOfAccTxt.getText(), timeTxt.getText(), placeTxt.getText(),
 						drNameTxt.getText(), crNameTxt.getText(), vehNoTxt.getText(), ghTxt.getText(),
@@ -174,7 +174,7 @@ public class AddNewController implements Initializable {
 				JFXSnackbar bar = new JFXSnackbar(root);
 				bar.enqueue(new JFXSnackbar.SnackbarEvent("FIP NO is Empty!"));
 			}
-		} else if (StringUtils.equals("Edit", saveBtn.getText())) {
+		} else if (StringUtils.equals("UPDATE", saveBtn.getText())) {
 			if (Utils.isValied(fipNoTxt.getText())) {
 				CaseDetail existCaseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
 				if (existCaseDetail != null) {
@@ -202,7 +202,7 @@ public class AddNewController implements Initializable {
 	}
 
 	public void resetAll() {
-		saveBtn.setText("Save");
+		saveBtn.setText("SAVE");
 		dateOfAccTxt.setText("");
 		timeTxt.setText("");
 		placeTxt.setText("");

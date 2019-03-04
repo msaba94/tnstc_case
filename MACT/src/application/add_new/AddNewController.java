@@ -5,7 +5,11 @@ import java.util.ResourceBundle;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 
 import application.database.SQLHelper;
 import application.model.CaseDetail;
@@ -13,9 +17,7 @@ import application.utils.Utils;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -26,76 +28,76 @@ public class AddNewController implements Initializable {
 	private AnchorPane root;
 
 	@FXML
-	private TextField fipNoTxt;
+	private JFXTextField fipNoTxt;
 
 	@FXML
-	private TextField dateOfAccTxt;
+	private JFXTextField dateOfAccTxt;
 
 	@FXML
-	private TextField timeTxt;
+	private JFXTextField timeTxt;
 
 	@FXML
-	private TextField placeTxt;
+	private JFXTextField placeTxt;
 
 	@FXML
-	private TextField drNameTxt;
+	private JFXTextField drNameTxt;
 
 	@FXML
-	private TextField crNameTxt;
+	private JFXTextField crNameTxt;
 
 	@FXML
-	private TextField vehNoTxt;
+	private JFXTextField vehNoTxt;
 
 	@FXML
-	private TextField routeTxt;
+	private JFXTextField routeTxt;
 
 	@FXML
-	private TextField branchTxt;
+	private JFXTextField branchTxt;
 
 	@FXML
-	private TextField typeOfRoadTxt;
+	private JFXTextField typeOfRoadTxt;
 
 	@FXML
-	private TextField ghTxt;
+	private JFXTextField ghTxt;
 
 	@FXML
-	private TextField policeStationTxt;
+	private JFXTextField policeStationTxt;
 
 	@FXML
-	private TextField petNameTxt;
+	private JFXTextField petNameTxt;
 
 	@FXML
-	private TextField mactTxt;
+	private JFXTextField mactTxt;
 
 	@FXML
-	private TextField mcopTxt;
+	private JFXTextField mcopTxt;
 
 	@FXML
-	private TextField firstHearTxt;
+	private JFXTextField firstHearTxt;
 
 	@FXML
-	private TextField epTxt;
+	private JFXTextField epTxt;
 
 	@FXML
-	private TextField firTxt;
+	private JFXTextField firTxt;
 
 	@FXML
-	private TextField dateOfWarrentTxt;
+	private JFXTextField dateOfWarrentTxt;
 
 	@FXML
-	private TextField natureOfAccTxt;
+	private JFXTextField natureOfAccTxt;
 
 	@FXML
-	private TextArea punishmentTxt;
+	private JFXTextArea punishmentTxt;
 
 	@FXML
-	private TextArea darTxt;
+	private JFXTextArea darTxt;
 
 	@FXML
-	private Button saveBtn;
+	private JFXButton saveBtn;
 
 	@FXML
-	private Button resetBtn;
+	private JFXButton resetBtn;
 
 	private SQLHelper helper;
 

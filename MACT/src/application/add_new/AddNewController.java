@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import org.apache.commons.lang3.StringUtils;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
@@ -17,7 +16,6 @@ import application.utils.Utils;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;

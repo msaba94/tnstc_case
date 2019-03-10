@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/lib/common-lang3.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-beanutils-1.9.3.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-javaflow-1209105.jar"/>
+	<classpathentry kind="lib" path="dist/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jasperreports-javaflow-6.3.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jfoenix.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-examples-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-excelant-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/poi-scratchpad-3.16.jar"/>
+	<classpathentry kind="lib" path="dist/lib/sqlite-jdbc-3.18.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="dist/MactApplication.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

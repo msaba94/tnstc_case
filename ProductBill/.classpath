@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/commons-beanutils-1.9.3.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/commons-javaflow-1209105.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/jasperreports-javaflow-6.3.1.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/jfoenix.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/poi-examples-3.16.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/poi-excelant-3.16.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/poi-scratchpad-3.16.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/sqlite-jdbc-3.18.0.jar"/>
+	<classpathentry kind="lib" path="F:/Saba Office/offline-billing/JAR Files/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

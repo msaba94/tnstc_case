@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7109dfe-fe8b-4d56-ba56-c78653d7fe8c">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="140"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="5c1c4050-0fb3-4b19-8c18-367fc3131944"/>
+	<parameter name="grand_total" class="java.lang.Object"/>
+	<parameter name="name" class="java.lang.Object"/>
+	<parameter name="gst" class="java.lang.Object"/>
+	<parameter name="bill_no" class="java.lang.Object"/>
+	<parameter name="bill_id" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[SELECT * FROM ORDER_DETAIL INNER JOIN BILL ON ORDER_DETAIL.bill_id = BILL.id INNER JOIN PRODUCT ON ORDER_DETAIL.product_id = PRODUCT.id  LEFT JOIN CUSTOMER ON BILL.customer_id = CUSTOMER.id  WHERE ORDER_DETAIL.bill_id = $P{bill_id}]]>
+	</queryString>
+	<field name="id" class="java.lang.Object"/>
+	<field name="product_id" class="java.lang.Object"/>
+	<field name="bill_id" class="java.lang.Object"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<field name="exchange_count" class="java.lang.Object"/>
+	<field name="created_on" class="java.lang.Object"/>
+	<field name="modify_on" class="java.lang.Object"/>
+	<field name="total_amount" class="java.lang.Object"/>
+	<field name="customer_id" class="java.lang.Object"/>
+	<field name="title" class="java.lang.Object"/>
+	<field name="desc" class="java.lang.Object"/>
+	<field name="category_id" class="java.lang.Object"/>
+	<field name="code" class="java.lang.Object"/>
+	<field name="measure_type" class="java.lang.Object"/>
+	<field name="purchased_price" class="java.lang.Object"/>
+	<field name="purchased_from" class="java.lang.Object"/>
+	<field name="hsn_id" class="java.lang.Object"/>
+	<field name="selling_price" class="java.lang.Float"/>
+	<field name="mrp" class="java.lang.Object"/>
+	<field name="color" class="java.lang.Object"/>
+	<field name="tags" class="java.lang.Object"/>
+	<field name="vendor_id" class="java.lang.Object"/>
+	<field name="active" class="java.lang.Object"/>
+	<field name="name" class="java.lang.Object"/>
+	<field name="mobile" class="java.lang.Object"/>
+	<field name="address" class="java.lang.Object"/>
+	<field name="gender" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="0" width="111" height="19" uuid="7148a66d-3782-4d22-af24-439106efce83"/>
+				<textElement textAlignment="Center">
+					<font fontName="Montserrat" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[iCLIENT Bill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="19" width="111" height="27" uuid="04c5390b-0497-478f-bb1c-7e43b72f2b6d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<text><![CDATA[28, Appavu Street, 
+Cuddalore 607001]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="1" width="68" height="46" uuid="1b52234b-781f-4da2-94d7-5af239ddcbc8"/>
+				<imageExpression><![CDATA["E:\\Office Project\\offline-billing\\ProductBill\\src\\image\\33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="401" y="1" width="154" height="18" uuid="ed7e8ec0-f8f3-4b2f-80a1-e91672ea94c1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<text><![CDATA[Email : info@iclienttech.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="19" width="154" height="18" uuid="0c5de9b2-b5f5-44ca-8694-92f4c41aac7a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<text><![CDATA[Cell : +91 8870088108]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="437" y="37" width="118" height="20" uuid="8551d172-6ffd-4b02-a8e5-66af1428021c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="401" y="37" width="36" height="20" uuid="85aa3ff1-7779-4ab1-86c0-2c6250e576dd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="47" width="41" height="20" uuid="a59a8cf3-e505-422f-9171-50daf15c5dd8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<text><![CDATA[Name :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="47" width="329" height="20" uuid="6d634478-5e01-4405-82e0-75e4b8ee93a2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + ($F{name} != null ? $F{name} : $P{name})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="73" width="41" height="20" uuid="db7e5ef3-5b5a-4802-b2de-2527c003a9ef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<text><![CDATA[Bill No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="73" width="180" height="20" uuid="fca80fc0-bfa8-4c8b-ae1c-ca1c008e6191"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bill_no}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="420" y="6" width="100" height="20" uuid="491d597c-5767-471a-901a-e527a3464130"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="6" width="100" height="20" uuid="6fcf98c8-aa3f-469d-94fb-d96a0f7d0b2c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="6" width="100" height="20" uuid="1c15f653-72e5-4461-acdf-43f076b9dd10"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quanitity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="6" width="100" height="20" uuid="87393b8c-efa6-44d2-8bf6-91c860cc67be"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="113" y="0" width="1" height="29" uuid="52defea8-85d0-4bdc-bb19-87e64b940d08"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="100" height="20" uuid="c518e897-c90c-47bd-9ca7-a7a377c871f6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="0" width="100" height="20" uuid="ae4282d5-a077-4465-bcc5-feb84a7cde86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="0" width="100" height="20" uuid="e5804820-4f75-4a73-b960-82f7d934c735"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{selling_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="100" height="20" uuid="60bd6b31-a3c1-4e28-82ae-190233ab56f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+ new Double($F{quantity}.intValue() * $F{selling_price}.doubleValue())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="113" y="0" width="1" height="22" uuid="228d478f-9049-4308-b30e-f57949c592b8"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="271" y="1" width="100" height="20" uuid="b5e5bab7-cf90-4096-8bea-00b6a4504cae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Grand Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="1" width="100" height="20" uuid="2eda42f3-cc4a-4bdc-9c76-a9afc4284533"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{grand_total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="1" width="100" height="20" uuid="8a1c8cbe-5b9b-4982-9583-5a924e9ec02c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GST]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="1" width="100" height="20" uuid="fc66b7a0-145a-43d3-9bd8-52f771ac0269"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Montserrat" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gst}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

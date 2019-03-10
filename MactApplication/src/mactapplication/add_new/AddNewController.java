@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -133,8 +134,7 @@ public class AddNewController implements Initializable {
             routeTxt.setText(caseDetail.getRoute());
             fipNoTxt.setText(caseDetail.getFip());
         } else {
-            JFXSnackbar bar = new JFXSnackbar(root);
-            bar.enqueue(new JFXSnackbar.SnackbarEvent("Case Not Found for FIP NO: " + fipNoTxt.getText() + " Invalid"));
+            showAlert(Alert.AlertType.ERROR, "Case Not Foundt", "FIP NO: " + fipNoTxt.getText() + " Invalid");
             resetAll();
         }
     }
@@ -152,9 +152,7 @@ public class AddNewController implements Initializable {
 
                 CaseDetail existCaseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
                 if (existCaseDetail != null) {
-                    JFXSnackbar bar = new JFXSnackbar(root);
-                    bar.enqueue(new JFXSnackbar.SnackbarEvent(
-                            "Already exist FIP NO: " + fipNoTxt.getText() + " for other case"));
+                    showAlert(Alert.AlertType.ERROR, "Case already exist", "FIP NO: " + fipNoTxt.getText() + " for other case");
                     return;
                 }
 
@@ -178,14 +176,11 @@ public class AddNewController implements Initializable {
                             typeOfRoadTxt.getText(), routeTxt.getText());
 
                     if (helper.updateCaseDetails(caseDetail)) {
-                        JFXSnackbar bar = new JFXSnackbar(root);
-                        bar.enqueue(new JFXSnackbar.SnackbarEvent("Case Details Updated"));
+                        showAlert(Alert.AlertType.INFORMATION, "Case  Updated", "Case Details Updated");
                         resetAll();
                     }
                 } else {
-                    JFXSnackbar bar = new JFXSnackbar(root);
-                    bar.enqueue(new JFXSnackbar.SnackbarEvent(
-                            "Case Not Found for FIP NO: " + fipNoTxt.getText() + " Invalid"));
+                    showAlert(Alert.AlertType.ERROR, "Case Not Found", "FIP NO: " + fipNoTxt.getText() + " Invalid");
                 }
             }
         }
@@ -231,6 +226,13 @@ public class AddNewController implements Initializable {
                 }
             }
         });
+    }
+
+    private void showAlert(Alert.AlertType type, String title, String message) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

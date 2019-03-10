@@ -6,7 +6,6 @@
 package mactapplication.add_new;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -105,6 +104,7 @@ public class AddNewController implements Initializable {
     private JFXButton resetBtn;
 
     private SQLHelper helper;
+    private CaseDetail selectedCaseDetails;
 
     private void setDataToTxt(CaseDetail caseDetail) {
         if (caseDetail != null) {
@@ -134,7 +134,7 @@ public class AddNewController implements Initializable {
             routeTxt.setText(caseDetail.getRoute());
             fipNoTxt.setText(caseDetail.getFip());
         } else {
-            showAlert(Alert.AlertType.ERROR, "Case Not Foundt", "FIP NO: " + fipNoTxt.getText() + " Invalid");
+            showAlert(Alert.AlertType.ERROR, "Case Not Found", "FIP NO: " + fipNoTxt.getText() + " Invalid");
             resetAll();
         }
     }
@@ -160,8 +160,7 @@ public class AddNewController implements Initializable {
                     resetAll();
                 }
             } else {
-                JFXSnackbar bar = new JFXSnackbar(root);
-                bar.enqueue(new JFXSnackbar.SnackbarEvent("FIP NO is Empty!"));
+                showAlert(Alert.AlertType.ERROR, "Case Not Found", "FIP NO is Empty!");
             }
         } else if (StringUtils.equals("UPDATE", saveBtn.getText())) {
             if (Utils.isValied(fipNoTxt.getText())) {
@@ -213,6 +212,12 @@ public class AddNewController implements Initializable {
         fipNoTxt.setText("");
     }
 
+    public void showReport() {
+        if (selectedCaseDetails != null){
+            
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         helper = new SQLHelper();
@@ -223,6 +228,7 @@ public class AddNewController implements Initializable {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     CaseDetail caseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
                     setDataToTxt(caseDetail);
+                    selectedCaseDetails = caseDetail;
                 }
             }
         });

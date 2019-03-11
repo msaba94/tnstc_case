@@ -1,0 +1,99 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 7, 2017, 11:33:38 AM
+    Author     : iCT-3
+*/
+/*.root{
+    -fx-font-size: 10pt;
+    -fx-font-family: "Montserrat";
+    -fx-base: #8AC249;
+    -fx-background: rgb(244,244,245);
+    -fx-alignment: CENTER;
+}*/
+
+/*.table-row-cell:focused {
+    -fx-dark-text-color: #FFFFFF;
+    -fx-mid-text-color: #FFFFFF;
+    -fx-light-text-color: #FFFFFF;
+
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-dark-text-color: #FFFFFF;
+    -fx-mid-text-color: #FFFFFF;
+    -fx-light-text-color: #FFFFFF;
+}
+
+.clearStyle {
+    -fx-background-color: transparent;
+}
+
+.tabPane .tab:selected .tab-label {
+    -fx-background-color: #FFFFFF;
+    -fx-focus-color: #3E50B4;
+    -fx-text-fill: #3E50B4;
+
+} 
+.tabPane .tab-label {
+    -fx-background-color: #3E50B4;
+    -fx-focus-color: #3E50B4;
+    -fx-text-fill: #FFFFFF;
+}
+
+.tabPane .tab:selected {
+    -fx-background-color: #3E50B4;
+    -fx-focus-color: #3E50B4;
+    -fx-text-fill: #FFFFFF;
+}
+
+.tab-pane:top *.tab-header-area {
+
+}
+
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-background-color: #2F3E9E;
+    -fx-focus-color: #3E50B4;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #2F3E9E;
+    -fx-focus-color: #3E50B4;
+    -fx-text-fill: #FFFFFF;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-color: #2F3E9E;
+    -fx-focus-color: #3E50B4;
+    -fx-text-fill: #FFFFFF;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+     -fx-background-color: #DF40FA;
+    -fx-focus-color: #DF40FA;
+    -fx-text-fill: #FFFFFF;
+}*/
+
+.jfx-snackbar-content {
+    -fx-background-color: #323232;
+}
+.jfx-snackbar-toast {
+    -fx-text-fill: WHITE;   
+    -fx-font: 14px Montserrat Regular;
+    -fx-font-size: 14;    
+}
+.jfx-snackbar-action {
+    -fx-text-fill: #ff4081; 
+    -fx-font: 14px Montserrat Regular;
+}

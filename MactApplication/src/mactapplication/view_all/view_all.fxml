@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #e1e1e1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mactapplication.view_all.ViewAllController">
+    <children>
+      <JFXTreeTableView fx:id="caseDetailTV" layoutX="276.0" layoutY="84.0" onMouseClicked="#tvSelectedRow" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0" />
+      <HBox alignment="CENTER" layoutX="675.0" layoutY="14.0" prefHeight="40.0" prefWidth="280.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <JFXButton fx:id="refreshBtn" onAction="#refreshData" prefWidth="120.0" style="-fx-background-color: #00796B#00796B;" text="Refresh" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="deleteBtn" layoutX="90.0" layoutY="13.0" onAction="#deleteCaseDetail" prefWidth="120.0" style="-fx-background-color: #00796B#00796B;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

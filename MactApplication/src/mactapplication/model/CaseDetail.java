@@ -11,7 +11,7 @@ import javafx.beans.property.SimpleStringProperty;
 
 /**
  *
- * @author my
+ * @author Sabapathi
  */
 public class CaseDetail extends RecursiveTreeObject<CaseDetail> {
 

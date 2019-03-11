@@ -38,7 +38,7 @@ public class PrintReport extends JFrame {
 
         try {
 
-            JasperReport jasperReport = JasperCompileManager.compileReport("F:\\Saba Office\\offline-billing\\ProductBill\\src\\productbill\\mini_bill_report\\mini_bill.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport("/Users/sabapathy/Sabapathi/tnstc_case/ProductBill/src/productbill/mini_bill_report/mini_bill.jrxml");
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametersMap, conn);
             JRViewer jView = new JRViewer(jasperPrint);
             jView.setVisible(true);

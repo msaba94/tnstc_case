@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaseReport" language="groovy" pageWidth="625" pageHeight="842" columnWidth="585" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a3e63e8-1a47-4849-826a-ee3f2bf6d2a5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fip" class="java.lang.String">
+		<defaultValueExpression><![CDATA[213/2019]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM MACT WHERE FIP=$P{fip};]]>
+	</queryString>
+	<field name="ID" class="java.lang.Object"/>
+	<field name="DATE_OF_ACC" class="java.lang.Object"/>
+	<field name="TIME" class="java.lang.Object"/>
+	<field name="PLACE" class="java.lang.Object"/>
+	<field name="DR_NAME" class="java.lang.Object"/>
+	<field name="CR_NAME" class="java.lang.Object"/>
+	<field name="VEH_NO" class="java.lang.Object"/>
+	<field name="GH" class="java.lang.Object"/>
+	<field name="POLICE_ST" class="java.lang.Object"/>
+	<field name="PET_NAME" class="java.lang.Object"/>
+	<field name="MACT" class="java.lang.Object"/>
+	<field name="MCOP" class="java.lang.Object"/>
+	<field name="FIRST_HEAR" class="java.lang.Object"/>
+	<field name="EP_NO" class="java.lang.Object"/>
+	<field name="FIR" class="java.lang.Object"/>
+	<field name="DATE_OF_WARRENT" class="java.lang.Object"/>
+	<field name="NATURE" class="java.lang.Object"/>
+	<field name="PUNISHMENT" class="java.lang.Object"/>
+	<field name="DAR" class="java.lang.Object"/>
+	<field name="FIP" class="java.lang.Object"/>
+	<field name="BRANCH" class="java.lang.Object"/>
+	<field name="TYPE_OF_ROAD" class="java.lang.Object"/>
+	<field name="ROUTE" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="585" height="29" uuid="a6cfe9d7-c0d8-40cd-98e3-3e514064f1ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAMIL NADU STATE TRANSPORT CORPORTION-VPM-LTD MACT SECTION]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4b7a6ec7-286e-4208-adef-980d86c03cb3"/>
+				<text><![CDATA[FIP]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="335" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="f21e1466-6e02-4b01-996a-6bd8c3c9eb8e"/>
+				<textFieldExpression><![CDATA[""+$F{FIP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -18,7 +18,7 @@ import mactapplication.database.SQLHelper;
 /**
  * FXML Controller class
  *
- * @author my
+ * @author Sabapathi
  */
 public class MainMenu implements Initializable {
 

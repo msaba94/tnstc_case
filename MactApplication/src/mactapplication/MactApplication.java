@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author my
+ * @author Sabapathi
  */
 public class MactApplication extends Application {
 

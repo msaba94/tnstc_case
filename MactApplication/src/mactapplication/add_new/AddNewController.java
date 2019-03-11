@@ -9,6 +9,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,12 +21,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import mactapplication.database.SQLHelper;
 import mactapplication.model.CaseDetail;
+import mactapplication.report.PrintReport;
 import mactapplication.utils.Utils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  *
- * @author my
+ * @author Sabapathi
  */
 public class AddNewController implements Initializable {
 
@@ -187,6 +190,7 @@ public class AddNewController implements Initializable {
     }
 
     public void resetAll() {
+        selectedCaseDetails = null;
         saveBtn.setText("SAVE");
         dateOfAccTxt.setText("");
         timeTxt.setText("");
@@ -213,8 +217,18 @@ public class AddNewController implements Initializable {
     }
 
     public void showReport() {
-        if (selectedCaseDetails != null){
-            
+        if (selectedCaseDetails != null) {
+            Map parametersMap = new HashMap();
+            parametersMap.put("fip", selectedCaseDetails.fip);
+
+            try {
+                PrintReport printReport = new PrintReport();
+                printReport.showReport(parametersMap);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                showAlert(Alert.AlertType.ERROR, "Jasper Error", "Jasper Print Error");
+            }
+
         }
     }
 

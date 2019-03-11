@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author my
+ * @author Sabapathi
  */
 public class MactApplication extends Application {
 
@@ -22,7 +22,7 @@ public class MactApplication extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/mactapplication/main_menu/main.fxml"));
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {

@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.main_menu.MainMenu">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.main_menu.MainMenu">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutX="103.0" layoutY="54.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #00796B#00796B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER_LEFT" layoutX="103.0" layoutY="54.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #00796B;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton onAction="#switchAddNew" text="Add New Case" textFill="WHITE">
                <font>
@@ -30,7 +30,7 @@
             </JFXButton>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="75.0" layoutY="50.0" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: #009688#009688;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <HBox alignment="CENTER" layoutX="75.0" layoutY="50.0" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: #009688;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TAMIL NADU STATE TRANSPORT CORPORTION-VPM-LTD MACT SECTION">
                <font>
@@ -39,7 +39,7 @@
             </Text>
          </children>
       </HBox>
-      <ScrollPane fx:id="mainAnchor" layoutX="212.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1e1e1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+      <ScrollPane fx:id="mainAnchor" hbarPolicy="NEVER" layoutX="212.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e1e1e1;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <padding>
             <Insets left="15.0" right="15.0" top="15.0" />
          </padding>

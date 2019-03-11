@@ -5,11 +5,15 @@
  */
 package mactapplication.utils;
 
+import mactapplication.model.CaseDetail;
+
 /**
  *
- * @author my
+ * @author Sabapathi
  */
 public class Utils {
+
+    public static CaseDetail selectedCase;
 
     public static boolean isValied(String str) {
         if (str == null || "null".equals(str)) {

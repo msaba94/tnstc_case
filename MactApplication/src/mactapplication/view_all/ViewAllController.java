@@ -27,7 +27,7 @@ import mactapplication.model.CaseDetail;
 /**
  * FXML Controller class
  *
- * @author my
+ * @author Sabapathi
  */
 public class ViewAllController implements Initializable {
 

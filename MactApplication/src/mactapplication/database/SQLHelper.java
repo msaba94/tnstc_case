@@ -15,7 +15,7 @@ import mactapplication.model.CaseDetail;
 
 /**
  *
- * @author my
+ * @author Sabapathi
  */
 public class SQLHelper {
 

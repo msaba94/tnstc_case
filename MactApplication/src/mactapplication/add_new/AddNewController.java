@@ -24,7 +24,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  *
- * @author my
+ * @author Sabapathi
  */
 public class AddNewController implements Initializable {
 
@@ -104,7 +104,6 @@ public class AddNewController implements Initializable {
     private JFXButton resetBtn;
 
     private SQLHelper helper;
-    private CaseDetail selectedCaseDetails;
 
     private void setDataToTxt(CaseDetail caseDetail) {
         if (caseDetail != null) {
@@ -187,6 +186,7 @@ public class AddNewController implements Initializable {
     }
 
     public void resetAll() {
+        Utils.selectedCase = null;
         saveBtn.setText("SAVE");
         dateOfAccTxt.setText("");
         timeTxt.setText("");
@@ -212,12 +212,6 @@ public class AddNewController implements Initializable {
         fipNoTxt.setText("");
     }
 
-    public void showReport() {
-        if (selectedCaseDetails != null){
-            
-        }
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         helper = new SQLHelper();
@@ -228,7 +222,7 @@ public class AddNewController implements Initializable {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     CaseDetail caseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
                     setDataToTxt(caseDetail);
-                    selectedCaseDetails = caseDetail;
+                    Utils.selectedCase = caseDetail;
                 }
             }
         });

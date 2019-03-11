@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="MactApplication.jar" size="36231" download="eager" />
+    <jar href="MactApplication.jar" size="35987" download="eager" />
     <jar href="lib/common-lang3.jar" size="646680" download="eager" />
     <jar href="lib/commons-beanutils-1.9.3.jar" size="246174" download="eager" />
     <jar href="lib/commons-collections-3.2.2.jar" size="588337" download="eager" />
@@ -16,7 +16,7 @@
     <jar href="lib/commons-digester-2.1.jar" size="196768" download="eager" />
     <jar href="lib/commons-javaflow-1209105.jar" size="100854" download="eager" />
     <jar href="lib/commons-logging-1.2.jar" size="61829" download="eager" />
-    <jar href="lib/groovy-all-3.0.0-alpha-4-groovydoc.jar" size="8163799" download="eager" />
+    <jar href="lib/groovy-all-2.4.10.jar" size="7030596" download="eager" />
     <jar href="lib/jasperreports-javaflow-6.3.1.jar" size="5588071" download="eager" />
     <jar href="lib/jfoenix.jar" size="2375703" download="eager" />
     <jar href="lib/poi-3.16.jar" size="2679259" download="eager" />

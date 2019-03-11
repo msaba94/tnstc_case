@@ -6,8 +6,6 @@
 package mactapplication.report;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.Map;
 import javax.swing.JFrame;
 import mactapplication.database.SQLConnection;
@@ -24,20 +22,18 @@ import net.sf.jasperreports.swing.JRViewer;
 public class PrintReport extends JFrame {
 
     Connection conn;
-    PreparedStatement statement;
-    ResultSet resultSet;
 
     public PrintReport() {
         conn = SQLConnection.connection();
     }
 
     public void showReport(Map parametersMap) {
-        if (conn != null) {
-            System.out.println("Connected");
+        if (conn == null) {
+            System.out.println("Connection Failed");
+            return;
         }
 
         try {
-            System.out.print(parametersMap);
 
 //            JasperReport jasperReport = JasperCompileManager.compileReport("/Users/sabapathy/Sabapathi/tnstc_case/MactApplication/src/mactapplication/report/CaseReport.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport("/Users/sabapathy/Sabapathi/tnstc_case/MactApplication/src/mactapplication/report/CaseReport.jrxml");

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #e1e1e1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mactapplication.add_new.AddNewController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #e1e1e1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mactapplication.add_new.AddNewController">
      <padding>
       <Insets left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -224,14 +224,6 @@
                </HBox.margin>
             </JFXButton>
             <JFXButton fx:id="resetBtn" layoutX="90.0" layoutY="23.0" onAction="#resetAll" prefWidth="150.0" style="-fx-background-color: #009688#009688;" text="RSET ALL" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </JFXButton>
-            <JFXButton fx:id="printBtn" layoutX="298.0" layoutY="21.0" onAction="#showReport" prefWidth="150.0" style="-fx-background-color: #009688#009688;" text="PRINT" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

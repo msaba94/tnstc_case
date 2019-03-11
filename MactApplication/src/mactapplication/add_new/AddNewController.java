@@ -9,8 +9,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -21,7 +19,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import mactapplication.database.SQLHelper;
 import mactapplication.model.CaseDetail;
-import mactapplication.report.PrintReport;
 import mactapplication.utils.Utils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -107,7 +104,6 @@ public class AddNewController implements Initializable {
     private JFXButton resetBtn;
 
     private SQLHelper helper;
-    private CaseDetail selectedCaseDetails;
 
     private void setDataToTxt(CaseDetail caseDetail) {
         if (caseDetail != null) {
@@ -190,7 +186,7 @@ public class AddNewController implements Initializable {
     }
 
     public void resetAll() {
-        selectedCaseDetails = null;
+        Utils.selectedCase = null;
         saveBtn.setText("SAVE");
         dateOfAccTxt.setText("");
         timeTxt.setText("");
@@ -216,22 +212,6 @@ public class AddNewController implements Initializable {
         fipNoTxt.setText("");
     }
 
-    public void showReport() {
-        if (selectedCaseDetails != null) {
-            Map parametersMap = new HashMap();
-            parametersMap.put("fip", selectedCaseDetails.fip);
-
-            try {
-                PrintReport printReport = new PrintReport();
-                printReport.showReport(parametersMap);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                showAlert(Alert.AlertType.ERROR, "Jasper Error", "Jasper Print Error");
-            }
-
-        }
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         helper = new SQLHelper();
@@ -242,7 +222,7 @@ public class AddNewController implements Initializable {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     CaseDetail caseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
                     setDataToTxt(caseDetail);
-                    selectedCaseDetails = caseDetail;
+                    Utils.selectedCase = caseDetail;
                 }
             }
         });

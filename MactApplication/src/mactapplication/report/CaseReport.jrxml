@@ -1,299 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaseReport" pageWidth="625" pageHeight="842" columnWidth="585" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a3e63e8-1a47-4849-826a-ee3f2bf6d2a5">
-    <property name="ireport.zoom" value="1.5"/>
-    <property name="ireport.x" value="0"/>
-    <property name="ireport.y" value="0"/>
-    <parameter name="fip" class="java.lang.String">
-        <defaultValueExpression><![CDATA[213/2019]]></defaultValueExpression>
-    </parameter>
-    <queryString>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fip" class="java.lang.String">
+		<defaultValueExpression><![CDATA[213/2019]]></defaultValueExpression>
+	</parameter>
+	<queryString>
 		<![CDATA[SELECT * FROM MACT WHERE FIP=$P{fip};]]>
-    </queryString>
-    <field name="ID" class="java.lang.Object"/>
-    <field name="DATE_OF_ACC" class="java.lang.Object"/>
-    <field name="TIME" class="java.lang.Object"/>
-    <field name="PLACE" class="java.lang.Object"/>
-    <field name="DR_NAME" class="java.lang.Object"/>
-    <field name="CR_NAME" class="java.lang.Object"/>
-    <field name="VEH_NO" class="java.lang.Object"/>
-    <field name="GH" class="java.lang.Object"/>
-    <field name="POLICE_ST" class="java.lang.Object"/>
-    <field name="PET_NAME" class="java.lang.Object"/>
-    <field name="MACT" class="java.lang.Object"/>
-    <field name="MCOP" class="java.lang.Object"/>
-    <field name="FIRST_HEAR" class="java.lang.Object"/>
-    <field name="EP_NO" class="java.lang.Object"/>
-    <field name="FIR" class="java.lang.Object"/>
-    <field name="DATE_OF_WARRENT" class="java.lang.Object"/>
-    <field name="NATURE" class="java.lang.Object"/>
-    <field name="PUNISHMENT" class="java.lang.Object"/>
-    <field name="DAR" class="java.lang.Object"/>
-    <field name="FIP" class="java.lang.Object"/>
-    <field name="BRANCH" class="java.lang.Object"/>
-    <field name="TYPE_OF_ROAD" class="java.lang.Object"/>
-    <field name="ROUTE" class="java.lang.Object"/>
-    <background>
-        <band splitType="Stretch"/>
-    </background>
-    <title>
-        <band height="34" splitType="Stretch">
-            <staticText>
-                <reportElement x="0" y="0" width="585" height="29" uuid="a6cfe9d7-c0d8-40cd-98e3-3e514064f1ee"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle">
-                    <font fontName="Times New Roman" size="17" isBold="true"/>
-                </textElement>
-                <text><![CDATA[TAMIL NADU STATE TRANSPORT CORPORTION-VPM-LTD MACT SECTION]]></text>
-            </staticText>
-        </band>
-    </title>
-    <detail>
-        <band height="502" splitType="Stretch">
-            <staticText>
-                <reportElement x="11" y="10" width="68" height="20" uuid="30939514-78ab-4cc3-834e-e1e34c16f844"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[File No:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="11" y="30" width="100" height="20" uuid="0a9ce23f-6453-4a30-b340-99bc3abfbe69"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{FIP}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="139" y="10" width="100" height="20" uuid="5a65cbd0-5fc6-4967-af47-ea6603540d1b"/>
-                <text><![CDATA[Date of Accident:]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="279" y="10" width="100" height="20" uuid="29bb28d8-e8b0-4a02-8248-557ac8285f9c"/>
-                <text><![CDATA[Time of Accident:]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="430" y="10" width="100" height="20" uuid="b6a1fd44-bc61-408d-81ac-7447a1dc712f"/>
-                <text><![CDATA[Place:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="139" y="30" width="100" height="20" uuid="fae8917f-daf1-4846-a69a-fb48ef243526"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{DATE_OF_ACC}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="279" y="30" width="100" height="20" uuid="b4753733-42ab-4b9c-ae99-dfd0981f3351"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{TIME}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="430" y="30" width="100" height="20" uuid="e9344228-c94e-4259-aa19-af6af15e7766"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{PLACE}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="11" y="69" width="100" height="20" uuid="be60a405-2542-466b-a244-848fca63bd18"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Driver Name:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="11" y="89" width="165" height="20" uuid="92616565-e567-41d3-a0a4-336f55b547a4"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{DR_NAME}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="201" y="69" width="100" height="20" uuid="60a68174-0f26-47de-bce9-6d59ceacfbb1"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Conductor Name:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="201" y="89" width="178" height="20" uuid="556d1432-e931-4c35-828d-75e9d356af0e"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{CR_NAME}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="430" y="69" width="100" height="20" uuid="50bf0523-8982-40ba-9932-af4b0a7f29c0"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Veh No:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="430" y="89" width="100" height="20" uuid="fff5b3ba-55d9-4058-b45f-ab7bd3767b61"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{VEH_NO}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="11" y="127" width="100" height="20" uuid="55320828-25e6-4015-8302-aa19ba6a909a"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Route:]]></text>
-            </staticText>
-            <staticText>
-                <reportElement x="139" y="127" width="100" height="20" uuid="b939255c-abdf-4790-b7b2-dbf623beef81"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Branch:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="11" y="147" width="100" height="20" uuid="ea700910-3304-4727-aa3f-603a76a9a144"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{ROUTE}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="139" y="147" width="126" height="20" uuid="156b5067-9e8f-4d7c-96dd-9c83bcaab658"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{BRANCH}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="279" y="127" width="100" height="20" uuid="20bf750d-0a07-4af8-884c-71ecc1082ab0"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Type of Road:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="279" y="147" width="100" height="20" uuid="3a9c9b77-0601-4482-9752-923d56ec2d9a"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{TYPE_OF_ROAD}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="430" y="127" width="100" height="20" uuid="243e6d81-1f71-44c9-8a2a-8e754971e4ab"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Govt Hospital:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="430" y="147" width="100" height="20" uuid="b3391e70-c4f9-47cd-8608-24bf0543ce63"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{GH}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="11" y="182" width="100" height="20" uuid="61c27477-76fa-45a9-93b3-9203f91a06fd"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Govt Hospital:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="11" y="202" width="118" height="20" uuid="a85af379-78eb-4f02-9316-1563b4d4987a"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{POLICE_ST}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="176" y="182" width="126" height="20" uuid="a2b97085-1758-4b11-ac5f-ab9b31e12fa4"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Petitioner Name:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="176" y="202" width="183" height="20" uuid="0ac9c22e-6a01-432e-a3d1-c5561993553d"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{PET_NAME}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="394" y="182" width="126" height="20" uuid="3fb5e4dc-73d1-4462-b48c-965e561fb55c"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[First Hearing:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="394" y="202" width="136" height="20" uuid="de8c3ba2-912f-4997-8a20-22a99ca95d06"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{FIRST_HEAR}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="11" y="244" width="100" height="20" uuid="39ea3f0a-20c0-4eb2-98a3-20f02bd79690"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[MACT/Court:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="11" y="264" width="118" height="20" uuid="4eb469f6-e68d-4f37-a88f-b84c052aac77"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{MACT}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="139" y="244" width="100" height="20" uuid="ed22c3aa-b450-4c67-8d71-2eb9a1ce8bdd"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[MCOP/Case:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="139" y="264" width="126" height="20" uuid="41f1f54f-2f4c-4780-96fe-edf877d0a1d3"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{MCOP}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="279" y="244" width="100" height="20" uuid="1b4c83e7-b7a6-4fc9-87d6-61f5850befb3"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[EP NO:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="279" y="264" width="100" height="20" uuid="f6dbe414-2014-48d4-bfae-aa50fc61a8bb"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{EP_NO}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="430" y="244" width="100" height="20" uuid="d4ec4831-c0b0-4fab-8cbf-f3b106a49084"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[EP NO:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="430" y="264" width="100" height="20" uuid="c6d93256-28d2-4ab6-887b-7b36cbcdc83c"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{FIR}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="11" y="302" width="100" height="20" uuid="a5bd491e-065a-40a0-88ea-fb3b43574eb0"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Date of Warrent:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="11" y="322" width="118" height="20" uuid="5b7d6873-30ba-4577-a784-fe124fcd6cf1"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{DATE_OF_WARRENT}]]></textFieldExpression>
-            </textField>
-            <staticText>
-                <reportElement x="176" y="302" width="100" height="20" uuid="c273cf22-9e54-4317-a7e4-e1210311d5b7"/>
-                <textElement verticalAlignment="Middle"/>
-                <text><![CDATA[Nature of Accident:]]></text>
-            </staticText>
-            <textField>
-                <reportElement x="179" y="322" width="123" height="20" uuid="811f3db8-a014-41ca-9a33-aa3c0f9524c4"/>
-                <textElement verticalAlignment="Middle">
-                    <font isBold="true"/>
-                </textElement>
-                <textFieldExpression><![CDATA[""+$F{NATURE}]]></textFieldExpression>
-            </textField>
-        </band>
-    </detail>
-    <columnFooter>
-        <band height="45" splitType="Stretch"/>
-    </columnFooter>
-    <pageFooter>
-        <band height="54" splitType="Stretch"/>
-    </pageFooter>
-    <summary>
-        <band height="42" splitType="Stretch"/>
-    </summary>
+	</queryString>
+	<field name="ID" class="java.lang.Object"/>
+	<field name="DATE_OF_ACC" class="java.lang.Object"/>
+	<field name="TIME" class="java.lang.Object"/>
+	<field name="PLACE" class="java.lang.Object"/>
+	<field name="DR_NAME" class="java.lang.Object"/>
+	<field name="CR_NAME" class="java.lang.Object"/>
+	<field name="VEH_NO" class="java.lang.Object"/>
+	<field name="GH" class="java.lang.Object"/>
+	<field name="POLICE_ST" class="java.lang.Object"/>
+	<field name="PET_NAME" class="java.lang.Object"/>
+	<field name="MACT" class="java.lang.Object"/>
+	<field name="MCOP" class="java.lang.Object"/>
+	<field name="FIRST_HEAR" class="java.lang.Object"/>
+	<field name="EP_NO" class="java.lang.Object"/>
+	<field name="FIR" class="java.lang.Object"/>
+	<field name="DATE_OF_WARRENT" class="java.lang.Object"/>
+	<field name="NATURE" class="java.lang.Object"/>
+	<field name="PUNISHMENT" class="java.lang.Object"/>
+	<field name="DAR" class="java.lang.Object"/>
+	<field name="FIP" class="java.lang.Object"/>
+	<field name="BRANCH" class="java.lang.Object"/>
+	<field name="TYPE_OF_ROAD" class="java.lang.Object"/>
+	<field name="ROUTE" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="585" height="29" uuid="a6cfe9d7-c0d8-40cd-98e3-3e514064f1ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="17" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAMIL NADU STATE TRANSPORT CORPORTION-VPM-LTD MACT SECTION]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="502" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="10" width="68" height="20" uuid="30939514-78ab-4cc3-834e-e1e34c16f844"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[File No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="30" width="100" height="20" uuid="0a9ce23f-6453-4a30-b340-99bc3abfbe69"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{FIP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="139" y="10" width="100" height="20" uuid="5a65cbd0-5fc6-4967-af47-ea6603540d1b"/>
+				<text><![CDATA[Date of Accident:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="10" width="100" height="20" uuid="29bb28d8-e8b0-4a02-8248-557ac8285f9c"/>
+				<text><![CDATA[Time of Accident:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="10" width="100" height="20" uuid="b6a1fd44-bc61-408d-81ac-7447a1dc712f"/>
+				<text><![CDATA[Place:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="139" y="30" width="100" height="20" uuid="fae8917f-daf1-4846-a69a-fb48ef243526"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{DATE_OF_ACC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="30" width="100" height="20" uuid="b4753733-42ab-4b9c-ae99-dfd0981f3351"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{TIME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="30" width="100" height="20" uuid="e9344228-c94e-4259-aa19-af6af15e7766"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{PLACE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="69" width="100" height="20" uuid="be60a405-2542-466b-a244-848fca63bd18"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Driver Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="89" width="165" height="20" uuid="92616565-e567-41d3-a0a4-336f55b547a4"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{DR_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="201" y="69" width="100" height="20" uuid="60a68174-0f26-47de-bce9-6d59ceacfbb1"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Conductor Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="201" y="89" width="178" height="20" uuid="556d1432-e931-4c35-828d-75e9d356af0e"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{CR_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="69" width="100" height="20" uuid="50bf0523-8982-40ba-9932-af4b0a7f29c0"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Veh No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="89" width="100" height="20" uuid="fff5b3ba-55d9-4058-b45f-ab7bd3767b61"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{VEH_NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="127" width="100" height="20" uuid="55320828-25e6-4015-8302-aa19ba6a909a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Route:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="127" width="100" height="20" uuid="b939255c-abdf-4790-b7b2-dbf623beef81"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Branch:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="147" width="100" height="20" uuid="ea700910-3304-4727-aa3f-603a76a9a144"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{ROUTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="147" width="126" height="20" uuid="156b5067-9e8f-4d7c-96dd-9c83bcaab658"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{BRANCH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="127" width="100" height="20" uuid="20bf750d-0a07-4af8-884c-71ecc1082ab0"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Type of Road:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="279" y="147" width="100" height="20" uuid="3a9c9b77-0601-4482-9752-923d56ec2d9a"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{TYPE_OF_ROAD}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="127" width="100" height="20" uuid="243e6d81-1f71-44c9-8a2a-8e754971e4ab"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Govt Hospital:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="147" width="100" height="20" uuid="b3391e70-c4f9-47cd-8608-24bf0543ce63"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{GH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="182" width="100" height="20" uuid="61c27477-76fa-45a9-93b3-9203f91a06fd"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Govt Hospital:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="202" width="118" height="20" uuid="a85af379-78eb-4f02-9316-1563b4d4987a"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{POLICE_ST}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="176" y="182" width="126" height="20" uuid="a2b97085-1758-4b11-ac5f-ab9b31e12fa4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Petitioner Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="176" y="202" width="183" height="20" uuid="0ac9c22e-6a01-432e-a3d1-c5561993553d"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{PET_NAME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="394" y="182" width="126" height="20" uuid="3fb5e4dc-73d1-4462-b48c-965e561fb55c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[First Hearing:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="202" width="136" height="20" uuid="de8c3ba2-912f-4997-8a20-22a99ca95d06"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{FIRST_HEAR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="244" width="100" height="20" uuid="39ea3f0a-20c0-4eb2-98a3-20f02bd79690"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MACT/Court:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="264" width="118" height="20" uuid="4eb469f6-e68d-4f37-a88f-b84c052aac77"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{MACT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="139" y="244" width="100" height="20" uuid="ed22c3aa-b450-4c67-8d71-2eb9a1ce8bdd"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MCOP/Case:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="139" y="264" width="126" height="20" uuid="41f1f54f-2f4c-4780-96fe-edf877d0a1d3"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{MCOP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="244" width="100" height="20" uuid="1b4c83e7-b7a6-4fc9-87d6-61f5850befb3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[EP NO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="279" y="264" width="100" height="20" uuid="f6dbe414-2014-48d4-bfae-aa50fc61a8bb"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{EP_NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="244" width="100" height="20" uuid="d4ec4831-c0b0-4fab-8cbf-f3b106a49084"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[EP NO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="264" width="100" height="20" uuid="c6d93256-28d2-4ab6-887b-7b36cbcdc83c"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{FIR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="302" width="100" height="20" uuid="a5bd491e-065a-40a0-88ea-fb3b43574eb0"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Date of Warrent:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="322" width="118" height="20" uuid="5b7d6873-30ba-4577-a784-fe124fcd6cf1"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{DATE_OF_WARRENT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="176" y="302" width="100" height="20" uuid="c273cf22-9e54-4317-a7e4-e1210311d5b7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nature of Accident:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="179" y="322" width="123" height="20" uuid="811f3db8-a014-41ca-9a33-aa3c0f9524c4"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{NATURE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
 </jasperReport>

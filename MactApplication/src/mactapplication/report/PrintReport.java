@@ -58,7 +58,8 @@ public class PrintReport extends JFrame {
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			throw new Exception();
+			System.out.println("Print Report Error: " + ex.getMessage());
+			throw new Exception(ex);
 		}
 	}
 

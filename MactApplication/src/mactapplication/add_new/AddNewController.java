@@ -242,6 +242,8 @@ public class AddNewController implements Initializable {
 				PrintReport printReport = new PrintReport();
 				printReport.showReport(parametersMap);
 			} catch (Throwable e) {
+				e.printStackTrace();
+				System.out.println("Add New Controller Error: " + e.getMessage());
 				showAlert(Alert.AlertType.ERROR, "Jasper Error", "Print out not working");
 			}
 		}

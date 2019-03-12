@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7109dfe-fe8b-4d56-ba56-c78653d7fe8c">
-	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="140"/>
+	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -67,78 +67,78 @@
 			<staticText>
 				<reportElement x="69" y="0" width="111" height="19" uuid="7148a66d-3782-4d22-af24-439106efce83"/>
 				<textElement textAlignment="Center">
-					<font fontName="Montserrat" size="12" isBold="true"/>
+					<font fontName="Monospaced" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[iCLIENT Bill]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="69" y="19" width="111" height="27" uuid="04c5390b-0497-478f-bb1c-7e43b72f2b6d"/>
 				<textElement textAlignment="Center">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<text><![CDATA[28, Appavu Street, 
 Cuddalore 607001]]></text>
 			</staticText>
-			<image>
-				<reportElement x="1" y="1" width="68" height="46" uuid="1b52234b-781f-4da2-94d7-5af239ddcbc8"/>
-				<imageExpression><![CDATA["E:\\Office Project\\offline-billing\\ProductBill\\src\\image\\33b869f90619e81763dbf1fccc896d8d--lion-logo-modern-logo.jpg"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="401" y="1" width="154" height="18" uuid="ed7e8ec0-f8f3-4b2f-80a1-e91672ea94c1"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<text><![CDATA[Email : info@iclienttech.com]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="401" y="19" width="154" height="18" uuid="0c5de9b2-b5f5-44ca-8694-92f4c41aac7a"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<text><![CDATA[Cell : +91 8870088108]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="437" y="37" width="118" height="20" uuid="8551d172-6ffd-4b02-a8e5-66af1428021c"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="401" y="37" width="36" height="20" uuid="85aa3ff1-7779-4ab1-86c0-2c6250e576dd"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<text><![CDATA[Date :]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="1" y="47" width="41" height="20" uuid="a59a8cf3-e505-422f-9171-50daf15c5dd8"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<text><![CDATA[Name :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="42" y="47" width="329" height="20" uuid="6d634478-5e01-4405-82e0-75e4b8ee93a2"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<textFieldExpression><![CDATA["" + ($F{name} != null ? $F{name} : $P{name})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="1" y="73" width="41" height="20" uuid="db7e5ef3-5b5a-4802-b2de-2527c003a9ef"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<text><![CDATA[Bill No:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="42" y="73" width="180" height="20" uuid="fca80fc0-bfa8-4c8b-ae1c-ca1c008e6191"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{bill_no}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="3" y="1" width="66" height="45" uuid="0d3f0819-e760-4754-9d2b-1fdcae418c40"/>
+				<imageExpression><![CDATA["/Users/sabapathy/Sabapathi/tnstc_case/ProductBill/src/image/logo.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -156,7 +156,7 @@ Cuddalore 607001]]></text>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
@@ -170,7 +170,7 @@ Cuddalore 607001]]></text>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Price]]></text>
 			</staticText>
@@ -184,7 +184,7 @@ Cuddalore 607001]]></text>
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Quanitity]]></text>
 			</staticText>
@@ -198,7 +198,7 @@ Cuddalore 607001]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Name]]></text>
 			</staticText>
@@ -212,28 +212,28 @@ Cuddalore 607001]]></text>
 			<textField>
 				<reportElement x="3" y="0" width="100" height="20" uuid="c518e897-c90c-47bd-9ca7-a7a377c871f6"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+$F{title}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="134" y="0" width="100" height="20" uuid="ae4282d5-a077-4465-bcc5-feb84a7cde86"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+$F{quantity}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="271" y="0" width="100" height="20" uuid="e5804820-4f75-4a73-b960-82f7d934c735"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+$F{selling_price}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="420" y="0" width="100" height="20" uuid="60bd6b31-a3c1-4e28-82ae-190233ab56f8"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat"/>
+					<font fontName="Monospaced"/>
 				</textElement>
 				<textFieldExpression><![CDATA[""+ new Double($F{quantity}.intValue() * $F{selling_price}.doubleValue())]]></textFieldExpression>
 			</textField>
@@ -247,28 +247,28 @@ Cuddalore 607001]]></text>
 			<staticText>
 				<reportElement x="271" y="1" width="100" height="20" uuid="b5e5bab7-cf90-4096-8bea-00b6a4504cae"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Grand Total]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="420" y="1" width="100" height="20" uuid="2eda42f3-cc4a-4bdc-9c76-a9afc4284533"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{grand_total}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="1" y="1" width="100" height="20" uuid="8a1c8cbe-5b9b-4982-9583-5a924e9ec02c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GST]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="134" y="1" width="100" height="20" uuid="fc66b7a0-145a-43d3-9bd8-52f771ac0269"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Montserrat" size="10" isBold="true"/>
+					<font fontName="Monospaced" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{gst}]]></textFieldExpression>
 			</textField>

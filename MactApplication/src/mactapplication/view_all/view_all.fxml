@@ -12,7 +12,7 @@
       <JFXTreeTableView fx:id="caseDetailTV" layoutX="276.0" layoutY="84.0" onMouseClicked="#tvSelectedRow" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0" />
       <HBox alignment="CENTER" layoutX="675.0" layoutY="14.0" prefHeight="40.0" prefWidth="280.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="20.0">
          <children>
-            <JFXButton fx:id="refreshBtn" onAction="#refreshData" prefWidth="120.0" style="-fx-background-color: #00796B#00796B;" text="Refresh" textFill="WHITE">
+            <JFXButton fx:id="refreshBtn" onAction="#refreshData" prefWidth="120.0" style="-fx-background-color: #1976d2#1976d2;" text="Refresh" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -20,7 +20,7 @@
                   <Insets />
                </HBox.margin>
             </JFXButton>
-            <JFXButton fx:id="deleteBtn" layoutX="90.0" layoutY="13.0" onAction="#deleteCaseDetail" prefWidth="120.0" style="-fx-background-color: #00796B#00796B;" text="Delete" textFill="WHITE">
+            <JFXButton fx:id="deleteBtn" layoutX="90.0" layoutY="13.0" onAction="#deleteCaseDetail" prefWidth="120.0" style="-fx-background-color: #1976d2#1976d2;" text="Delete" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

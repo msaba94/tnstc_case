@@ -213,7 +213,7 @@
             </JFXTextArea>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="263.0" layoutY="512.0" prefHeight="60.0" prefWidth="615.0" AnchorPane.leftAnchor="263.0" AnchorPane.rightAnchor="262.0">
+      <HBox alignment="CENTER" layoutX="283.0" layoutY="510.0" prefHeight="60.0" prefWidth="615.0" AnchorPane.leftAnchor="283.0" AnchorPane.rightAnchor="282.0">
          <children>
             <JFXButton fx:id="saveBtn" onAction="#saveCase" prefWidth="150.0" style="-fx-background-color: #009688#009688;" text="SAVE" textFill="WHITE">
                <font>
@@ -224,6 +224,14 @@
                </HBox.margin>
             </JFXButton>
             <JFXButton fx:id="resetBtn" layoutX="90.0" layoutY="23.0" onAction="#resetAll" prefWidth="150.0" style="-fx-background-color: #009688#009688;" text="RSET ALL" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="printBtn" layoutX="298.0" layoutY="23.0" onAction="#printCaseDetails" prefWidth="150.0" style="-fx-background-color: #009688#009688;" text="PRINT" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

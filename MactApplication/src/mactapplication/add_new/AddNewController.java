@@ -9,6 +9,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,6 +21,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import mactapplication.database.SQLHelper;
 import mactapplication.model.CaseDetail;
+import mactapplication.report.PrintReport;
 import mactapplication.utils.Utils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -226,6 +229,24 @@ public class AddNewController implements Initializable {
                 }
             }
         });
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @FXML
+    public void printCaseDetails() {
+        if (Utils.selectedCase != null) {
+            Map parametersMap = new HashMap();
+            parametersMap.put("fip", Utils.selectedCase.getFip());
+
+            try {
+                PrintReport printReport = new PrintReport();
+                printReport.showReport(parametersMap);
+            } catch (Throwable e) {
+                e.printStackTrace();
+                System.out.println("Add New Controller Error: " + e.getMessage());
+                showAlert(Alert.AlertType.ERROR, "Jasper Error", "Print out not working");
+            }
+        }
     }
 
     private void showAlert(Alert.AlertType type, String title, String message) {

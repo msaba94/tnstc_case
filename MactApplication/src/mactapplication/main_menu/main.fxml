@@ -28,11 +28,6 @@
                   <Font size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="printBtn" onAction="#printCaseDetails" prefWidth="150.0" text="Print" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </JFXButton>
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="75.0" layoutY="50.0" prefHeight="75.0" prefWidth="200.0" style="-fx-background-color: #009688#009688;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">

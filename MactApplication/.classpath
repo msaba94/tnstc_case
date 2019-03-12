@@ -20,5 +20,6 @@
 	<classpathentry kind="lib" path="dist/lib/sqlite-jdbc-3.18.0.jar"/>
 	<classpathentry kind="lib" path="dist/lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="lib" path="dist/MactApplication.jar"/>
+	<classpathentry kind="lib" path="/Users/sabapathy/Sabapathi/tnstc_case/JAR Files/itext-2.1.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

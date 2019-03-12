@@ -230,24 +230,24 @@ public class AddNewController implements Initializable {
             }
         });
     }
-    
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@FXML
-	public void printCaseDetails() {
-		if (Utils.selectedCase != null) {
-			Map parametersMap = new HashMap();
-			parametersMap.put("fip", Utils.selectedCase.getFip());
 
-			try {
-				PrintReport printReport = new PrintReport();
-				printReport.showReport(parametersMap);
-			} catch (Throwable e) {
-				e.printStackTrace();
-				System.out.println("Add New Controller Error: " + e.getMessage());
-				showAlert(Alert.AlertType.ERROR, "Jasper Error", "Print out not working");
-			}
-		}
-	}
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @FXML
+    public void printCaseDetails() {
+        if (Utils.selectedCase != null) {
+            Map parametersMap = new HashMap();
+            parametersMap.put("fip", Utils.selectedCase.getFip());
+
+            try {
+                PrintReport printReport = new PrintReport();
+                printReport.showReport(parametersMap);
+            } catch (Throwable e) {
+                e.printStackTrace();
+                System.out.println("Add New Controller Error: " + e.getMessage());
+                showAlert(Alert.AlertType.ERROR, "Jasper Error", "Print out not working");
+            }
+        }
+    }
 
     private void showAlert(Alert.AlertType type, String title, String message) {
         Alert alert = new Alert(type);

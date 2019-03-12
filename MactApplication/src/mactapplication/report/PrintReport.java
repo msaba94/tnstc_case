@@ -22,45 +22,43 @@ import net.sf.jasperreports.swing.JRViewer;
  */
 public class PrintReport extends JFrame {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	Connection conn;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    Connection conn;
 
-	public PrintReport() {
-		conn = SQLConnection.connection();
-	}
+    public PrintReport() {
+        conn = SQLConnection.connection();
+    }
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public void showReport(Map parametersMap) throws Throwable {
-		if (conn == null) {
-			System.out.println("Connection Failed");
-			return;
-		}
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public void showReport(Map parametersMap) throws Throwable {
+        if (conn == null) {
+            System.out.println("Connection Failed");
+            return;
+        }
 
-		String reportSource = "/mactapplication/report/CaseReport.jrxml";
-		InputStream is = null;
+        String reportSource = "/mactapplication/report/CaseReport.jrxml";
+        InputStream is = null;
 
-		try {
-			is = getClass().getResourceAsStream(reportSource);
-			// JasperReport jasperReport =
-			// JasperCompileManager.compileReport("/Users/sabapathy/Sabapathi/tnstc_case/MactApplication/src/mactapplication/report/CaseReport.jrxml");
-			JasperReport jasperReport = JasperCompileManager.compileReport(is);
-			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametersMap, conn);
-			JRViewer jView = new JRViewer(jasperPrint);
-			jView.setVisible(true);
-			jView.setOpaque(true);
+        try {
+            is = getClass().getResourceAsStream(reportSource);
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametersMap, conn);
+            JRViewer jView = new JRViewer(jasperPrint);
+            jView.setVisible(true);
+            jView.setOpaque(true);
 
-			this.add(jView);
-			this.setSize(900, 500);
-			this.setVisible(true);
+            this.add(jView);
+            this.setSize(900, 500);
+            this.setVisible(true);
 
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			System.out.println("Print Report Error: " + ex.getMessage());
-			throw new Exception(ex);
-		}
-	}
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Print Report Error: " + ex.getMessage());
+            throw new Exception(ex);
+        }
+    }
 
 }

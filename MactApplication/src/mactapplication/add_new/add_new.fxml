@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #e1e1e1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mactapplication.add_new.AddNewController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: #e1e1e1;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mactapplication.add_new.AddNewController">
      <padding>
       <Insets left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -23,14 +24,11 @@
                   <Insets left="25.0" right="25.0" />
                </HBox.margin>
             </JFXTextField>
-            <JFXTextField fx:id="dateOfAccTxt" focusColor="#1976d2" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="Date of Acc:" unFocusColor="#757575">
-               <font>
-                  <Font size="16.5" />
-               </font>
+            <JFXDatePicker fx:id="dateOfAcc" defaultColor="#1976d2" prefWidth="250.0" promptText="Date of Acc:">
                <HBox.margin>
                   <Insets left="25.0" right="25.0" />
                </HBox.margin>
-            </JFXTextField>
+            </JFXDatePicker>
             <JFXTextField fx:id="timeTxt" focusColor="#1976d2" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Time:" unFocusColor="#757575">
                <font>
                   <Font size="16.5" />
@@ -193,7 +191,68 @@
             </JFXTextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="375.0" layoutY="330.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="340.0">
+      <HBox alignment="CENTER" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="340.0">
+         <children>
+            <JFXTextField fx:id="claimAmountTxt" focusColor="#1976d2" labelFloat="true" prefWidth="250.0" promptText="Claim Amount:" unFocusColor="#757575">
+               <font>
+                  <Font size="16.5" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="awardAmountTxt" focusColor="#1976d2" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="Award Amount:" unFocusColor="#757575">
+               <font>
+                  <Font size="16.5" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="advocateNameTxt" focusColor="#1976d2" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Advocate Name:" unFocusColor="#757575">
+               <font>
+                  <Font size="16.5" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="tnstcAdvocateTxt" focusColor="#1976d2" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="TNSTC Advocate:" unFocusColor="#757575">
+               <font>
+                  <Font size="16.5" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="400.0">
+         <children>
+            <JFXDatePicker fx:id="vakkalathuDate" defaultColor="#1976d2" prefWidth="250.0" promptText="Vakkalathu Date:">
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </JFXDatePicker>
+            <JFXTextField fx:id="seatNameTxt" focusColor="#1976d2" labelFloat="true" layoutX="21.0" layoutY="10.0" prefWidth="250.0" promptText="Seat Name:" unFocusColor="#757575">
+               <font>
+                  <Font size="16.5" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="fatalNameTxt" focusColor="#1976d2" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Fatal Name:" unFocusColor="#757575">
+               <font>
+                  <Font size="16.5" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </HBox.margin>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="375.0" layoutY="330.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0">
          <children>
             <JFXTextArea fx:id="punishmentTxt" focusColor="#1976d2" labelFloat="true" prefWidth="450.0" promptText="Punishment:" unFocusColor="#757575">
                <font>
@@ -213,7 +272,7 @@
             </JFXTextArea>
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="283.0" layoutY="510.0" prefHeight="60.0" prefWidth="615.0" AnchorPane.leftAnchor="283.0" AnchorPane.rightAnchor="282.0">
+      <HBox alignment="CENTER" layoutX="303.0" layoutY="620.0" prefHeight="60.0" prefWidth="615.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="302.0">
          <children>
             <JFXButton fx:id="saveBtn" onAction="#saveCase" prefWidth="150.0" style="-fx-background-color: #1976d2#1976d2;" text="SAVE" textFill="WHITE">
                <font>

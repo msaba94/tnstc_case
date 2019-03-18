@@ -38,11 +38,20 @@ public class CaseDetail extends RecursiveTreeObject<CaseDetail> {
     public SimpleStringProperty branch;
     public SimpleStringProperty typeOfRoad;
     public SimpleStringProperty route;
+    public SimpleStringProperty claimAmount;
+    public SimpleStringProperty awardAmount;
+    public SimpleStringProperty advocateName;
+    public SimpleStringProperty tnsctAdvocate;
+    public SimpleStringProperty vakkalathuDate;
+    public SimpleStringProperty fatalName;
+    public SimpleStringProperty seatName;
 
     public CaseDetail(int id, String dateOfAcc, String time, String place, String drName, String crName, String vehNo,
             String gh, String policeStation, String petName, String mact, String mcop, String firstHear, String epNo,
             String fir, String dateOfWarrent, String nature, String punishment, String dar, String fip, String branch,
-            String typeOfRoad, String route) {
+            String typeOfRoad, String route, String claimAmount,
+            String awardAmount, String advocateName, String tnsctAdvocate,
+            String vakkalathuDate, String fatalName, String seatName) {
         this.id = new SimpleIntegerProperty(id);
         this.dateOfAcc = new SimpleStringProperty(dateOfAcc);
         this.time = new SimpleStringProperty(time);
@@ -66,6 +75,13 @@ public class CaseDetail extends RecursiveTreeObject<CaseDetail> {
         this.branch = new SimpleStringProperty(branch);
         this.typeOfRoad = new SimpleStringProperty(typeOfRoad);
         this.route = new SimpleStringProperty(route);
+        this.claimAmount = new SimpleStringProperty(claimAmount);
+        this.awardAmount = new SimpleStringProperty(awardAmount);
+        this.advocateName = new SimpleStringProperty(advocateName);
+        this.tnsctAdvocate = new SimpleStringProperty(tnsctAdvocate);
+        this.vakkalathuDate = new SimpleStringProperty(vakkalathuDate);
+        this.fatalName = new SimpleStringProperty(fatalName);
+        this.seatName = new SimpleStringProperty(seatName);
     }
 
     public int getId() {
@@ -250,5 +266,61 @@ public class CaseDetail extends RecursiveTreeObject<CaseDetail> {
 
     public void setRoute(String route) {
         this.route.set(route);
+    }
+
+    public String getClaimAmount() {
+        return claimAmount.get();
+    }
+
+    public void setClaimAmount(String claimAmount) {
+        this.claimAmount.set(claimAmount);
+    }
+
+    public String getAwardAmount() {
+        return awardAmount.get();
+    }
+
+    public void setAwardAmount(String awardAmount) {
+        this.awardAmount.set(awardAmount);
+    }
+
+    public String getAdvocateName() {
+        return advocateName.get();
+    }
+
+    public void setAdvocateName(String advocateName) {
+        this.advocateName.set(advocateName);
+    }
+
+    public String getTnsctAdvocate() {
+        return tnsctAdvocate.get();
+    }
+
+    public void setTnsctAdvocate(String tnsctAdvocate) {
+        this.tnsctAdvocate.set(tnsctAdvocate);
+    }
+
+    public String getVakkalathuDate() {
+        return vakkalathuDate.get();
+    }
+
+    public void setVakkalathuDate(String vakkalathuDate) {
+        this.vakkalathuDate.set(vakkalathuDate);
+    }
+
+    public String getFatalName() {
+        return fatalName.get();
+    }
+
+    public void setFatalName(String fatalName) {
+        this.fatalName.set(fatalName);
+    }
+
+    public String getSeatName() {
+        return seatName.get();
+    }
+
+    public void setSeatName(String seatName) {
+        this.seatName.set(seatName);
     }
 }

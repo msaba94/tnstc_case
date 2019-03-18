@@ -166,6 +166,12 @@ public class AddNewController implements Initializable {
             typeOfRoadTxt.setText(caseDetail.getTypeOfRoad());
             routeTxt.setText(caseDetail.getRoute());
             fipNoTxt.setText(caseDetail.getFip());
+            claimAmountTxt.setText(caseDetail.getClaimAmount());
+            awardAmountTxt.setText(caseDetail.getAwardAmount());
+            advocateNameTxt.setText(caseDetail.getAdvocateName());
+            tnstcAdvocateTxt.setText(caseDetail.getTnsctAdvocate());
+            fatalNameTxt.setText(caseDetail.getFatalName());
+            seatNameTxt.setText(caseDetail.getSeatName());
         } else {
             showAlert(Alert.AlertType.ERROR, "Case Not Found", "FIP NO: " + fipNoTxt.getText() + " Invalid");
             resetAll();

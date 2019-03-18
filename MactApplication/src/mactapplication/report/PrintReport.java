@@ -43,6 +43,7 @@ public class PrintReport extends JFrame {
         InputStream is = null;
 
         try {
+            System.err.println(parametersMap);
             is = getClass().getResourceAsStream(reportSource);
             JasperReport jasperReport = JasperCompileManager.compileReport(is);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametersMap, conn);

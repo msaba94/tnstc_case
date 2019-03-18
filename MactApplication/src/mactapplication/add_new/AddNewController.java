@@ -6,9 +6,12 @@
 package mactapplication.add_new;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -38,7 +41,7 @@ public class AddNewController implements Initializable {
     private JFXTextField fipNoTxt;
 
     @FXML
-    private JFXTextField dateOfAccTxt;
+    private JFXDatePicker dateOfAcc;
 
     @FXML
     private JFXTextField timeTxt;
@@ -101,19 +104,47 @@ public class AddNewController implements Initializable {
     private JFXTextArea darTxt;
 
     @FXML
+    private JFXTextField claimAmountTxt;
+
+    @FXML
+    private JFXTextField awardAmountTxt;
+
+    @FXML
+    private JFXTextField advocateNameTxt;
+
+    @FXML
+    private JFXTextField tnstcAdvocateTxt;
+
+    @FXML
+    private JFXDatePicker vakkalathuDate;
+
+    @FXML
+    private JFXTextField seatNameTxt;
+
+    @FXML
+    private JFXTextField fatalNameTxt;
+
+    @FXML
     private JFXButton saveBtn;
 
     @FXML
     private JFXButton resetBtn;
 
     private SQLHelper helper;
+    private String pattern = "yyyy-MM-dd";
 
     private void setDataToTxt(CaseDetail caseDetail) {
         if (caseDetail != null) {
 
             saveBtn.setText("UPDATE");
 
-            dateOfAccTxt.setText(caseDetail.getDateOfAcc());
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+            LocalDate localDate = LocalDate.parse(caseDetail.getDateOfAcc(), formatter);
+            dateOfAcc.setValue(localDate);
+
+            LocalDate vakkalathuLocalDate = LocalDate.parse(caseDetail.getVakkalathuDate(), formatter);
+            vakkalathuDate.setValue(vakkalathuLocalDate);
+
             timeTxt.setText(caseDetail.getTime());
             placeTxt.setText(caseDetail.getPlace());
             drNameTxt.setText(caseDetail.getDrName());
@@ -143,14 +174,26 @@ public class AddNewController implements Initializable {
 
     public void saveCase() {
 
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
+        String dateOfAccStr = null, vakkalathuDateStr = null;
+        
+        if (dateOfAcc.getValue() != null) {
+            dateOfAccStr = dateFormatter.format(dateOfAcc.getValue());
+        }
+        if (vakkalathuDate.getValue() != null) {
+            vakkalathuDateStr = dateFormatter.format(vakkalathuDate.getValue());
+        }
+
         if (StringUtils.equals("SAVE", saveBtn.getText())) {
             if (Utils.isValied(fipNoTxt.getText())) {
-                CaseDetail caseDetail = new CaseDetail(0, dateOfAccTxt.getText(), timeTxt.getText(), placeTxt.getText(),
+                CaseDetail caseDetail = new CaseDetail(0, dateOfAccStr, timeTxt.getText(), placeTxt.getText(),
                         drNameTxt.getText(), crNameTxt.getText(), vehNoTxt.getText(), ghTxt.getText(),
                         policeStationTxt.getText(), petNameTxt.getText(), mactTxt.getText(), mcopTxt.getText(),
                         firstHearTxt.getText(), epTxt.getText(), firTxt.getText(), dateOfWarrentTxt.getText(),
                         natureOfAccTxt.getText(), punishmentTxt.getText(), darTxt.getText(), fipNoTxt.getText(),
-                        branchTxt.getText(), typeOfRoadTxt.getText(), routeTxt.getText());
+                        branchTxt.getText(), typeOfRoadTxt.getText(), routeTxt.getText(), claimAmountTxt.getText(),
+                        awardAmountTxt.getText(), advocateNameTxt.getText(), tnstcAdvocateTxt.getText(),
+                        vakkalathuDateStr, fatalNameTxt.getText(), seatNameTxt.getText());
 
                 CaseDetail existCaseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
                 if (existCaseDetail != null) {
@@ -168,13 +211,15 @@ public class AddNewController implements Initializable {
             if (Utils.isValied(fipNoTxt.getText())) {
                 CaseDetail existCaseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
                 if (existCaseDetail != null) {
-                    CaseDetail caseDetail = new CaseDetail(existCaseDetail.getId(), dateOfAccTxt.getText(),
+                    CaseDetail caseDetail = new CaseDetail(existCaseDetail.getId(), dateOfAccStr,
                             timeTxt.getText(), placeTxt.getText(), drNameTxt.getText(), crNameTxt.getText(),
                             vehNoTxt.getText(), ghTxt.getText(), policeStationTxt.getText(), petNameTxt.getText(),
                             mactTxt.getText(), mcopTxt.getText(), firstHearTxt.getText(), epTxt.getText(),
                             firTxt.getText(), dateOfWarrentTxt.getText(), natureOfAccTxt.getText(),
                             punishmentTxt.getText(), darTxt.getText(), fipNoTxt.getText(), branchTxt.getText(),
-                            typeOfRoadTxt.getText(), routeTxt.getText());
+                            typeOfRoadTxt.getText(), routeTxt.getText(), claimAmountTxt.getText(),
+                            awardAmountTxt.getText(), advocateNameTxt.getText(), tnstcAdvocateTxt.getText(),
+                            vakkalathuDateStr, fatalNameTxt.getText(), seatNameTxt.getText());
 
                     if (helper.updateCaseDetails(caseDetail)) {
                         showAlert(Alert.AlertType.INFORMATION, "Case  Updated", "Case Details Updated");
@@ -191,7 +236,10 @@ public class AddNewController implements Initializable {
     public void resetAll() {
         Utils.selectedCase = null;
         saveBtn.setText("SAVE");
-        dateOfAccTxt.setText("");
+
+        dateOfAcc.setValue(null);
+        vakkalathuDate.setValue(null);
+
         timeTxt.setText("");
         placeTxt.setText("");
         drNameTxt.setText("");
@@ -213,11 +261,20 @@ public class AddNewController implements Initializable {
         typeOfRoadTxt.setText("");
         routeTxt.setText("");
         fipNoTxt.setText("");
+        claimAmountTxt.setText("");
+        awardAmountTxt.setText("");
+        advocateNameTxt.setText("");
+        tnstcAdvocateTxt.setText("");
+        fatalNameTxt.setText("");
+        seatNameTxt.setText("");
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         helper = new SQLHelper();
+
+        dateOfAcc.setStyle("-fx-font: 16px \"Montserrat Regular\";");
+        vakkalathuDate.setStyle("-fx-font: 16px \"Montserrat Regular\";");
 
         fipNoTxt.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override

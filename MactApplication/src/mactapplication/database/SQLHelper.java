@@ -26,7 +26,7 @@ public class SQLHelper {
     }
 
     public void createTables() {
-        String mactTable = "CREATE TABLE IF NOT EXISTS MACT (ID INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , DATE_OF_ACC DATETIME, TIME DATETIME, PLACE TEXT, DR_NAME TEXT, CR_NAME TEXT, VEH_NO TEXT, GH TEXT, POLICE_ST TEXT, PET_NAME TEXT, MACT TEXT, MCOP TEXT, FIRST_HEAR TEXT, EP_NO TEXT, FIR TEXT, DATE_OF_WARRENT TEXT, NATURE BOOL, PUNISHMENT TEXT, DAR TEXT, FIP TEXT, BRANCH TEXT, TYPE_OF_ROAD TEXT, ROUTE TEXT)";
+        String mactTable = "CREATE TABLE IF NOT EXISTS MACT (ID INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , DATE_OF_ACC DATETIME, TIME DATETIME, PLACE TEXT, DR_NAME TEXT, CR_NAME TEXT, VEH_NO TEXT, GH TEXT, POLICE_ST TEXT, PET_NAME TEXT, MACT TEXT, MCOP TEXT, FIRST_HEAR TEXT, EP_NO TEXT, FIR TEXT, DATE_OF_WARRENT TEXT, NATURE BOOL, PUNISHMENT TEXT, DAR TEXT, FIP TEXT, BRANCH TEXT, TYPE_OF_ROAD TEXT, ROUTE TEXT, CLAIM_AMOUNT TEXT, AWARD_AMOUNT TEXT, ADVOCATE_NAME TEXT, TNSTC_ADVOCATE TEXT, VAKKALATHU_DATE TEXT, FATAL_NAME TEXT, SEAT_NAME TEXT)";
         try {
 
             PreparedStatement mactTableStr = conn.prepareStatement(mactTable);
@@ -38,7 +38,7 @@ public class SQLHelper {
     }
 
     public boolean insertCategory(CaseDetail caseDetail) {
-        String query = "INSERT INTO MACT (DATE_OF_ACC, TIME, PLACE, DR_NAME, CR_NAME, VEH_NO, GH, POLICE_ST, PET_NAME, MACT, MCOP, FIRST_HEAR, EP_NO, FIR, DATE_OF_WARRENT, NATURE, PUNISHMENT, DAR, FIP, BRANCH, TYPE_OF_ROAD, ROUTE) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String query = "INSERT INTO MACT (DATE_OF_ACC, TIME, PLACE, DR_NAME, CR_NAME, VEH_NO, GH, POLICE_ST, PET_NAME, MACT, MCOP, FIRST_HEAR, EP_NO, FIR, DATE_OF_WARRENT, NATURE, PUNISHMENT, DAR, FIP, BRANCH, TYPE_OF_ROAD, ROUTE, CLAIM_AMOUNT, AWARD_AMOUNT, ADVOCATE_NAME, TNSTC_ADVOCATE, VAKKALATHU_DATE, FATAL_NAME, SEAT_NAME) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try {
             boolean isSuccess;
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -64,6 +64,13 @@ public class SQLHelper {
             stmt.setString(20, caseDetail.getBranch());
             stmt.setString(21, caseDetail.getTypeOfRoad());
             stmt.setString(22, caseDetail.getRoute());
+            stmt.setString(23, caseDetail.getClaimAmount());
+            stmt.setString(24, caseDetail.getAwardAmount());
+            stmt.setString(25, caseDetail.getAdvocateName());
+            stmt.setString(26, caseDetail.getTnsctAdvocate());
+            stmt.setString(27, caseDetail.getVakkalathuDate());
+            stmt.setString(28, caseDetail.getFatalName());
+            stmt.setString(29, caseDetail.getSeatName());
 
             int count = stmt.executeUpdate();
             isSuccess = count == 1;
@@ -90,7 +97,8 @@ public class SQLHelper {
                         rs.getString("MCOP"), rs.getString("FIRST_HEAR"), rs.getString("EP_NO"), rs.getString("FIR"),
                         rs.getString("DATE_OF_WARRENT"), rs.getString("NATURE"), rs.getString("PUNISHMENT"),
                         rs.getString("DAR"), rs.getString("FIP"), rs.getString("BRANCH"), rs.getString("TYPE_OF_ROAD"),
-                        rs.getString("ROUTE")));
+                        rs.getString("ROUTE"), rs.getString("CLAIM_AMOUNT"), rs.getString("AWARD_AMOUNT"), rs.getString("ADVOCATE_NAME"), 
+                        rs.getString("TNSTC_ADVOCATE"), rs.getString("VAKKALATHU_DATE"), rs.getString("FATAL_NAME"), rs.getString("SEAT_NAME")));
             }
             stmt.close();
             return data;
@@ -114,7 +122,8 @@ public class SQLHelper {
                         rs.getString("MCOP"), rs.getString("FIRST_HEAR"), rs.getString("EP_NO"), rs.getString("FIR"),
                         rs.getString("DATE_OF_WARRENT"), rs.getString("NATURE"), rs.getString("PUNISHMENT"),
                         rs.getString("DAR"), rs.getString("FIP"), rs.getString("BRANCH"), rs.getString("TYPE_OF_ROAD"),
-                        rs.getString("ROUTE"));
+                        rs.getString("ROUTE"), rs.getString("CLAIM_AMOUNT"), rs.getString("AWARD_AMOUNT"), rs.getString("ADVOCATE_NAME"), 
+                        rs.getString("TNSTC_ADVOCATE"), rs.getString("VAKKALATHU_DATE"), rs.getString("FATAL_NAME"), rs.getString("SEAT_NAME"));
             }
             stmt.close();
             return caseDetail;
@@ -125,7 +134,7 @@ public class SQLHelper {
     }
 
     public boolean updateCaseDetails(CaseDetail caseDetail) {
-        String query = "UPDATE MACT SET DATE_OF_ACC = ?, TIME = ?, PLACE = ?, DR_NAME = ?, CR_NAME = ?, VEH_NO = ?, GH = ?, POLICE_ST = ?, PET_NAME = ?, MACT = ?, MCOP = ?, FIRST_HEAR = ?, EP_NO = ?, FIR = ?, DATE_OF_WARRENT = ?, NATURE = ?, PUNISHMENT = ?, DAR = ?, FIP = ?, BRANCH = ?, TYPE_OF_ROAD = ?, ROUTE = ? WHERE ID = ?";
+        String query = "UPDATE MACT SET DATE_OF_ACC = ?, TIME = ?, PLACE = ?, DR_NAME = ?, CR_NAME = ?, VEH_NO = ?, GH = ?, POLICE_ST = ?, PET_NAME = ?, MACT = ?, MCOP = ?, FIRST_HEAR = ?, EP_NO = ?, FIR = ?, DATE_OF_WARRENT = ?, NATURE = ?, PUNISHMENT = ?, DAR = ?, FIP = ?, BRANCH = ?, TYPE_OF_ROAD = ?, ROUTE = ?, CLAIM_AMOUNT = ?, AWARD_AMOUNT = ?, ADVOCATE_NAME = ?, TNSTC_ADVOCATE = ?, VAKKALATHU_DATE = ?, FATAL_NAME = ?, SEAT_NAME = ? WHERE ID = ?";
         try {
             boolean isSuccess;
             PreparedStatement stmt = conn.prepareStatement(query);
@@ -151,7 +160,14 @@ public class SQLHelper {
             stmt.setString(20, caseDetail.getBranch());
             stmt.setString(21, caseDetail.getTypeOfRoad());
             stmt.setString(22, caseDetail.getRoute());
-            stmt.setInt(23, caseDetail.getId());
+            stmt.setString(23, caseDetail.getClaimAmount());
+            stmt.setString(24, caseDetail.getAwardAmount());
+            stmt.setString(25, caseDetail.getAdvocateName());
+            stmt.setString(26, caseDetail.getTnsctAdvocate());
+            stmt.setString(27, caseDetail.getVakkalathuDate());
+            stmt.setString(28, caseDetail.getFatalName());
+            stmt.setString(29, caseDetail.getSeatName());
+            stmt.setInt(30, caseDetail.getId());
 
             int count = stmt.executeUpdate();
             isSuccess = count == 1;

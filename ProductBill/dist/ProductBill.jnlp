@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ProductBill.jar" size="202004" download="eager" />
+    <jar href="ProductBill.jar" size="185818" download="eager" />
     <jar href="lib/commons-beanutils-1.9.3.jar" size="246174" download="eager" />
     <jar href="lib/commons-collections-3.2.2.jar" size="588337" download="eager" />
     <jar href="lib/commons-collections4-4.1.jar" size="751238" download="eager" />

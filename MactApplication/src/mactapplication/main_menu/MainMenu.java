@@ -22,36 +22,36 @@ import mactapplication.database.SQLHelper;
  */
 public class MainMenu implements Initializable {
 
-	@FXML
-	private ScrollPane mainAnchor;
+    @FXML
+    private AnchorPane mainAnchor;
 
-	private SQLHelper helper;
+    private SQLHelper helper;
 
-	@FXML
-	public void switchAddNew() throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/mactapplication/add_new/add_new.fxml"));
-		mainAnchor.setContent(pane);
-		pane.prefWidthProperty().bind(mainAnchor.widthProperty());
-		pane.prefHeightProperty().bind(mainAnchor.heightProperty());
-	}
+    @FXML
+    public void switchAddNew() throws IOException {
+        ScrollPane pane = FXMLLoader.load(getClass().getResource("/mactapplication/add_new/add_new.fxml"));
+        mainAnchor.getChildren().setAll(pane);
+        pane.prefWidthProperty().bind(mainAnchor.widthProperty());
+        pane.prefHeightProperty().bind(mainAnchor.heightProperty());
+    }
 
-	@FXML
-	public void switchViewAll() throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("/mactapplication/view_all/view_all.fxml"));
-		mainAnchor.setContent(pane);
-		pane.prefWidthProperty().bind(mainAnchor.widthProperty());
-		pane.prefHeightProperty().bind(mainAnchor.heightProperty());
-	}
+    @FXML
+    public void switchViewAll() throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("/mactapplication/view_all/view_all.fxml"));
+        mainAnchor.getChildren().setAll(pane);
+        pane.prefWidthProperty().bind(mainAnchor.widthProperty());
+        pane.prefHeightProperty().bind(mainAnchor.heightProperty());
+    }
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		try {
-			helper = new SQLHelper();
-			helper.createTables();
-			switchAddNew();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        try {
+            helper = new SQLHelper();
+            helper.createTables();
+            switchAddNew();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

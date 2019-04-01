@@ -16,7 +16,7 @@
          <children>
             <HBox alignment="CENTER" layoutX="236.0" layoutY="161.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
                <children>
-                  <JFXTextField fx:id="fipNoTxt" focusColor="#1976d2" labelFloat="true" prefWidth="250.0" promptText="FIP No:" unFocusColor="#757575">
+                  <JFXTextField fx:id="fipNoTxt" focusColor="#1976d2" labelFloat="true" prefWidth="250.0" promptText="File Name:" unFocusColor="#757575">
                      <font>
                         <Font size="16.5" />
                      </font>
@@ -242,7 +242,7 @@
                         <Insets left="25.0" right="25.0" />
                      </HBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="fatalNameTxt" focusColor="#1976d2" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Fatal Name:" unFocusColor="#757575">
+                  <JFXTextField fx:id="fatalNameTxt" focusColor="#1976d2" labelFloat="true" layoutX="10.0" layoutY="10.0" prefWidth="250.0" promptText="Deseace Name:" unFocusColor="#757575">
                      <font>
                         <Font size="16.5" />
                      </font>

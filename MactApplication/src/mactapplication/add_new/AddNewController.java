@@ -142,8 +142,10 @@ public class AddNewController implements Initializable {
             LocalDate localDate = LocalDate.parse(caseDetail.getDateOfAcc(), formatter);
             dateOfAcc.setValue(localDate);
 
-            LocalDate vakkalathuLocalDate = LocalDate.parse(caseDetail.getVakkalathuDate(), formatter);
-            vakkalathuDate.setValue(vakkalathuLocalDate);
+            if (caseDetail.getVakkalathuDate() != null) {
+                LocalDate vakkalathuLocalDate = LocalDate.parse(caseDetail.getVakkalathuDate(), formatter);
+                vakkalathuDate.setValue(vakkalathuLocalDate);
+            }
 
             timeTxt.setText(caseDetail.getTime());
             placeTxt.setText(caseDetail.getPlace());
@@ -173,7 +175,7 @@ public class AddNewController implements Initializable {
             fatalNameTxt.setText(caseDetail.getFatalName());
             seatNameTxt.setText(caseDetail.getSeatName());
         } else {
-            showAlert(Alert.AlertType.ERROR, "Case Not Found", "FIP NO: " + fipNoTxt.getText() + " Invalid");
+            showAlert(Alert.AlertType.ERROR, "Case Not Found", "File Name: " + fipNoTxt.getText() + " Invalid");
             resetAll();
         }
     }
@@ -182,7 +184,7 @@ public class AddNewController implements Initializable {
 
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
         String dateOfAccStr = null, vakkalathuDateStr = null;
-        
+
         if (dateOfAcc.getValue() != null) {
             dateOfAccStr = dateFormatter.format(dateOfAcc.getValue());
         }
@@ -203,7 +205,7 @@ public class AddNewController implements Initializable {
 
                 CaseDetail existCaseDetail = helper.getCaseDetailByFipNo(fipNoTxt.getText());
                 if (existCaseDetail != null) {
-                    showAlert(Alert.AlertType.ERROR, "Case already exist", "FIP NO: " + fipNoTxt.getText() + " for other case");
+                    showAlert(Alert.AlertType.ERROR, "Case already exist", "File Name: " + fipNoTxt.getText() + " for other case");
                     return;
                 }
 
@@ -211,7 +213,7 @@ public class AddNewController implements Initializable {
                     resetAll();
                 }
             } else {
-                showAlert(Alert.AlertType.ERROR, "Case Not Found", "FIP NO is Empty!");
+                showAlert(Alert.AlertType.ERROR, "Case Not Found", "File Name is Empty!");
             }
         } else if (StringUtils.equals("UPDATE", saveBtn.getText())) {
             if (Utils.isValied(fipNoTxt.getText())) {
@@ -232,7 +234,7 @@ public class AddNewController implements Initializable {
                         resetAll();
                     }
                 } else {
-                    showAlert(Alert.AlertType.ERROR, "Case Not Found", "FIP NO: " + fipNoTxt.getText() + " Invalid");
+                    showAlert(Alert.AlertType.ERROR, "Case Not Found", "File Name: " + fipNoTxt.getText() + " Invalid");
                 }
             }
         }

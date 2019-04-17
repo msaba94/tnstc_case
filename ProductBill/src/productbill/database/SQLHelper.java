@@ -9,12 +9,16 @@ import productbill.tab_bill.BillingDetail;
 import productbill.customer.Customer;
 import productbill.product.Product;
 import productbill.category.Category;
+
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import productbill.hsn.HSN;
@@ -47,6 +51,7 @@ public class SQLHelper {
 		String billTable = "CREATE TABLE IF NOT EXISTS BILL_DETAIL (id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , productName TEXT, categoryName TEXT, price TEXT, quantity TEXT, total TEXT, customer_id INTEGER NOT NULL, product_id INTEGER NOT NULL)";
 		String totalBill = "CREATE TABLE IF NOT EXISTS BILL (id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , total_amount TEXT, customer_id TEXT, exchange_count INTEGER DEFAULT 0, created_on TEXT DEFAULT CURRENT_TIMESTAMP, modify_on TEXT DEFAULT CURRENT_TIMESTAMP)";
 		String hsnTable = "CREATE TABLE IF NOT EXISTS HSN (id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , hsn_code TEXT, description TEXT,type INTEGER, gst FLOAT)";
+		String orderArray = "CREATE TABLE IF NOT EXISTS ORDER_ARRAY (id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL, bill_id INTEGER NOT NULL, product_ids TEXT ARRAY[])";
 
 		try {
 			PreparedStatement userTableStr = conn.prepareStatement(userTable);
@@ -59,6 +64,7 @@ public class SQLHelper {
 			PreparedStatement billTableStr = conn.prepareStatement(billTable);
 			PreparedStatement totalBillStr = conn.prepareStatement(totalBill);
 			PreparedStatement hsnStr = conn.prepareStatement(hsnTable);
+			PreparedStatement orderArrayStr = conn.prepareStatement(orderArray);
 
 			userTableStr.execute();
 			vendorTableStr.execute();
@@ -70,6 +76,7 @@ public class SQLHelper {
 			billTableStr.execute();
 			totalBillStr.execute();
 			hsnStr.execute();
+			orderArrayStr.execute();
 		} catch (SQLException ex) {
 			System.out.println(ex);
 		}
@@ -920,6 +927,28 @@ public class SQLHelper {
 
 			return isSuccess;
 		} catch (SQLException e) {
+			System.out.println(e);
+			return false;
+		}
+	}
+
+	public boolean insertOrderArray(int billId, ArrayList<String> productIds) {
+		String query = "INSERT INTO ORDER_ARRAY (bill_id, product_ids) VALUES (?,?)";
+		try {
+
+			String frnames[] = productIds.toArray(new String[productIds.size()]);
+			Array productIDS = conn.createArrayOf("text", frnames);
+
+			boolean isSuccess;
+			PreparedStatement stmt = conn.prepareStatement(query);
+			stmt.setInt(1, billId);
+			stmt.setArray(2, productIDS);
+
+			int count = stmt.executeUpdate();
+			isSuccess = count == 1;
+			stmt.close();
+			return isSuccess;
+		} catch (Exception e) {
 			System.out.println(e);
 			return false;
 		}

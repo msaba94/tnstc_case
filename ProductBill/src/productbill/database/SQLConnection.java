@@ -16,8 +16,8 @@ public class SQLConnection {
 
     public static Connection connection() {
         try {
-            Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:BillingDetails.sqlite");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/CUDDALORE_REG","root","Test@123");
             return conn;
         } catch (Exception ex) {
             ex.printStackTrace();

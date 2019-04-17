@@ -8,23 +8,28 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ProductBill.jar" size="185916" download="eager" />
-    <jar href="lib\commons-beanutils-1.9.3.jar" size="246174" download="eager" />
-    <jar href="lib\commons-collections-3.2.2.jar" size="588337" download="eager" />
-    <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
-    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
-    <jar href="lib\commons-javaflow-1209105.jar" size="100854" download="eager" />
-    <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
-    <jar href="lib\jasperreports-javaflow-6.3.1.jar" size="5588071" download="eager" />
-    <jar href="lib\jfoenix.jar" size="2375703" download="eager" />
-    <jar href="lib\poi-3.16.jar" size="2679259" download="eager" />
-    <jar href="lib\poi-examples-3.16.jar" size="369786" download="eager" />
-    <jar href="lib\poi-excelant-3.16.jar" size="31218" download="eager" />
-    <jar href="lib\poi-ooxml-3.16.jar" size="1433719" download="eager" />
-    <jar href="lib\poi-ooxml-schemas-3.16.jar" size="5871746" download="eager" />
-    <jar href="lib\poi-scratchpad-3.16.jar" size="1384931" download="eager" />
-    <jar href="lib\sqlite-jdbc-3.18.0.jar" size="6190949" download="eager" />
-    <jar href="lib\xmlbeans-2.6.0.jar" size="2730866" download="eager" />
+    <jar href="ProductBill.jar" size="186671" download="eager" />
+    <jar href="lib/c3p0-0.9.1-pre6.jar" size="531005" download="eager" />
+    <jar href="lib/commons-beanutils-1.9.3.jar" size="246174" download="eager" />
+    <jar href="lib/commons-collections-3.2.2.jar" size="588337" download="eager" />
+    <jar href="lib/commons-collections4-4.1.jar" size="751238" download="eager" />
+    <jar href="lib/commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib/commons-javaflow-1209105.jar" size="100854" download="eager" />
+    <jar href="lib/commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="lib/jasperreports-javaflow-6.3.1.jar" size="5588071" download="eager" />
+    <jar href="lib/jboss-common-jdbc-wrapper-src.jar" size="35342" download="eager" />
+    <jar href="lib/jboss-common-jdbc-wrapper.jar" size="50184" download="eager" />
+    <jar href="lib/jfoenix.jar" size="2375703" download="eager" />
+    <jar href="lib/mysql-connector-java-8.0.15.jar" size="2134905" download="eager" />
+    <jar href="lib/poi-3.16.jar" size="2679259" download="eager" />
+    <jar href="lib/poi-examples-3.16.jar" size="369786" download="eager" />
+    <jar href="lib/poi-excelant-3.16.jar" size="31218" download="eager" />
+    <jar href="lib/poi-ooxml-3.16.jar" size="1433719" download="eager" />
+    <jar href="lib/poi-ooxml-schemas-3.16.jar" size="5871746" download="eager" />
+    <jar href="lib/poi-scratchpad-3.16.jar" size="1384931" download="eager" />
+    <jar href="lib/protobuf-java-3.6.1.jar" size="1421323" download="eager" />
+    <jar href="lib/slf4j-api-1.6.1.jar" size="25496" download="eager" />
+    <jar href="lib/xmlbeans-2.6.0.jar" size="2730866" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ProductBill" >
     <param name="requiredFXVersion" value="8.0+"/>
